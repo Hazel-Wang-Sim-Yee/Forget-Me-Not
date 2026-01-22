@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "359282030570",
+    "firebase_url": "https://forgetmenot-ef901-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "forgetmenot-ef901",
+    "storage_bucket": "forgetmenot-ef901.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:359282030570:android:ce5bf0e4e041c1e3e86493",
+        "android_client_info": {
+          "package_name": "com.forgetmenot.sg"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD00B4DuarVpyxCml_Ht3KZ4Nak0hTJGes"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
