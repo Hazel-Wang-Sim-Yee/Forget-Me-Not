@@ -48,7 +48,7 @@ public class BouquetWrap : MonoBehaviour
 
         Quaternion rot =
             transform.rotation *
-            Quaternion.Euler(0f, 90f, 0f);
+            Quaternion.Euler(90f, 0f, 0f);
 
         Instantiate(bouquetPrefab, pos, rot);
         Destroy(gameObject);
