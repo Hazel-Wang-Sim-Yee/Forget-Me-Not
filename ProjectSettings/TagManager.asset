@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Anchor
   - Ribbon
+  - Money
   layers:
   - Default
   - TransparentFX
