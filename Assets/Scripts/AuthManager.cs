@@ -34,20 +34,20 @@ public class AuthManager : MonoBehaviour
         auth = FirebaseAuth.DefaultInstance;
         loginContainer.SetActive(false);
         signUpContainer.SetActive(false);
-        
+
         if (errorUI != null) errorUI.SetActive(false);
     }
 
     public void ShowLoginScreen()
     {
-        if (errorUI != null) errorUI.SetActive(false); 
+        if (errorUI != null) errorUI.SetActive(false);
         loginContainer.SetActive(true);
         signUpContainer.SetActive(false);
     }
 
     public void ShowSignUpScreen()
     {
-        if (errorUI != null) errorUI.SetActive(false); 
+        if (errorUI != null) errorUI.SetActive(false);
         loginContainer.SetActive(false);
         signUpContainer.SetActive(true);
     }
@@ -63,7 +63,8 @@ public class AuthManager : MonoBehaviour
             return;
         }
 
-        auth.SignInWithEmailAndPasswordAsync(email, password).ContinueWithOnMainThread(task => {
+        auth.SignInWithEmailAndPasswordAsync(email, password).ContinueWithOnMainThread(task =>
+        {
             if (task.IsCanceled || task.IsFaulted)
             {
                 HandleError(task.Exception);
@@ -72,8 +73,8 @@ public class AuthManager : MonoBehaviour
 
             // SUCCESS
             Debug.Log("Login Successful! User: " + task.Result.User.Email);
-            
-            SceneManager.LoadScene(nextSceneName); 
+
+            SceneManager.LoadScene(nextSceneName);
         });
     }
 
@@ -88,7 +89,8 @@ public class AuthManager : MonoBehaviour
             return;
         }
 
-        auth.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWithOnMainThread(task => {
+        auth.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWithOnMainThread(task =>
+        {
             if (task.IsCanceled || task.IsFaulted)
             {
                 HandleError(task.Exception);
@@ -97,32 +99,60 @@ public class AuthManager : MonoBehaviour
 
             // SUCCESS
             Debug.Log("Sign Up Success! Account Created.");
-            ShowLoginScreen(); 
+            ShowLoginScreen();
         });
     }
 
     void HandleError(System.Exception exception)
     {
-        Debug.LogError("Auth Error: " + exception);
         FirebaseException firebaseEx = exception.GetBaseException() as FirebaseException;
+
+        string message = "An error occurred.";
+
         if (firebaseEx != null)
         {
-            ShowErrorMessage(((AuthError)firebaseEx.ErrorCode).ToString());
+            AuthError errorCode = (AuthError)firebaseEx.ErrorCode;
+
+            switch (errorCode)
+            {
+                case AuthError.WrongPassword:
+                    message = "Wrong password.";
+                    break;
+                case AuthError.UserNotFound:
+                    message = "Account does not exist.";
+                    break;
+                case AuthError.EmailAlreadyInUse:
+                    message = "Email is already taken.";
+                    break;
+                case AuthError.InvalidEmail:
+                    message = "Invalid email format.";
+                    break;
+                case AuthError.WeakPassword:
+                    message = "Password must be at least 6 characters.";
+                    break;
+                default:
+                    message = errorCode.ToString();
+                    break;
+            }
         }
-        else
-        {
-            ShowErrorMessage("An unknown error occurred.");
-        }
+
+        ShowErrorMessage(message);
     }
 
     void ShowErrorMessage(string message)
     {
-        if (errorUI != null)
+        if (errorUI != null && errorText != null)
         {
+            errorText.text = message;
+
             errorUI.SetActive(true);
-            if (errorText != null) errorText.text = message;
-            StopAllCoroutines(); 
+
+            StopAllCoroutines();
             StartCoroutine(HideErrorAfterDelay());
+        }
+        else
+        {
+            Debug.LogError("Error UI or Text slots are empty in the Inspector!");
         }
     }
 
@@ -131,4 +161,6 @@ public class AuthManager : MonoBehaviour
         yield return new WaitForSeconds(5f);
         if (errorUI != null) errorUI.SetActive(false);
     }
+
+
 }
