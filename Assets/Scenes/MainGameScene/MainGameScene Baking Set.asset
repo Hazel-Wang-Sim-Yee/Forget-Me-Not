@@ -111,11 +111,11 @@ MonoBehaviour:
         hasOnlyBiggerBricks: 0
     - position: {x: 0, y: 0, z: -1}
       index: 4
-      probeCount: 4544
+      probeCount: 4416
       minSubdiv: 0
       indexChunkCount: 91
       shChunkCount: 1
-      bricksCount: 71
+      bricksCount: 69
       indirectionEntryInfo:
       - positionInBricks: {x: 0, y: 0, z: -27}
         minSubdiv: 0
@@ -143,30 +143,30 @@ MonoBehaviour:
   cellSharedDataAsset:
     m_AssetGUID: ee145e836284ad447988bbd82ef681b5
     m_StreamableAssetPath: APVStreamingAssets\e5df6242e030b664fb078fd068e6844f\ee145e836284ad447988bbd82ef681b5.bytes
-    m_ElementSize: 8192
+    m_ElementSize: 32768
     m_StreamableCellDescs:
       m_Keys: 00000000030000000c000000010000000a000000040000000d000000
       m_Values:
       - offset: 0
         elementCount: 1
-      - offset: 8192
-        elementCount: 1
-      - offset: 16384
-        elementCount: 1
-      - offset: 24576
-        elementCount: 1
       - offset: 32768
         elementCount: 1
-      - offset: 40960
+      - offset: 65536
         elementCount: 1
-      - offset: 49152
+      - offset: 98304
+        elementCount: 1
+      - offset: 131072
+        elementCount: 1
+      - offset: 163840
+        elementCount: 1
+      - offset: 196608
         elementCount: 1
     m_Asset: {fileID: 4900000, guid: ee145e836284ad447988bbd82ef681b5, type: 3}
   scenarios:
     m_Keys:
     - Default
     m_Values:
-    - sceneHash: -1175528393
+    - sceneHash: -2031663302
       cellDataAsset:
         m_AssetGUID: e297ea55878a2a247a6c6c7ecba56f2e
         m_StreamableAssetPath: APVStreamingAssets\e5df6242e030b664fb078fd068e6844f\e297ea55878a2a247a6c6c7ecba56f2e.bytes
@@ -251,30 +251,30 @@ MonoBehaviour:
       - offset: 1088
         elementCount: 6
       - offset: 1184
-        elementCount: 71
-      - offset: 2320
+        elementCount: 69
+      - offset: 2288
         elementCount: 9
     m_Asset: {fileID: 4900000, guid: a133ef538f9eb7b42bfdea9476babdd3, type: 3}
   cellSupportDataAsset:
     m_AssetGUID: baf35f8c297db8a40b0438741ec2e9c9
     m_StreamableAssetPath: APVStreamingAssets\e5df6242e030b664fb078fd068e6844f\baf35f8c297db8a40b0438741ec2e9c9.bytes
-    m_ElementSize: 262144
+    m_ElementSize: 270336
     m_StreamableCellDescs:
       m_Keys: 00000000030000000c000000010000000a000000040000000d000000
       m_Values:
       - offset: 0
         elementCount: 1
-      - offset: 262144
+      - offset: 270336
         elementCount: 1
-      - offset: 524288
+      - offset: 540672
         elementCount: 1
-      - offset: 786432
+      - offset: 811008
         elementCount: 1
-      - offset: 1048576
+      - offset: 1081344
         elementCount: 1
-      - offset: 1310720
+      - offset: 1351680
         elementCount: 1
-      - offset: 1572864
+      - offset: 1622016
         elementCount: 1
     m_Asset: {fileID: 4900000, guid: baf35f8c297db8a40b0438741ec2e9c9, type: 3}
   chunkSizeInBricks: 128
@@ -289,9 +289,9 @@ MonoBehaviour:
   bakedSkyOcclusionValue: 0
   bakedSkyShadingDirectionValue: 0
   bakedProbeOffset: {x: 0, y: 0, z: 0}
-  bakedMaskCount: 1
+  bakedMaskCount: 4
   bakedLayerMasks:
-    x: 4294967295
+    x: 0
     y: 0
     z: 0
     w: 0
@@ -300,16 +300,16 @@ MonoBehaviour:
   L1ChunkSize: 32768
   L2TextureChunkSize: 32768
   ProbeOcclusionChunkSize: 32768
-  sharedValidityMaskChunkSize: 8192
+  sharedValidityMaskChunkSize: 32768
   sharedSkyOcclusionL0L1ChunkSize: 0
   sharedSkyShadingDirectionIndicesChunkSize: 0
-  sharedDataChunkSize: 8192
+  sharedDataChunkSize: 32768
   supportPositionChunkSize: 98304
   supportValidityChunkSize: 32768
   supportTouchupChunkSize: 32768
-  supportLayerMaskChunkSize: 0
+  supportLayerMaskChunkSize: 8192
   supportOffsetsChunkSize: 98304
-  supportDataChunkSize: 262144
+  supportDataChunkSize: 270336
   lightingScenario: Default
   version: 2
   freezePlacement: 0
@@ -326,7 +326,7 @@ MonoBehaviour:
   skyOcclusionAverageAlbedo: 0.6
   skyOcclusionBackFaceCulling: 0
   skyOcclusionShadingDirection: 0
-  useRenderingLayers: 0
+  useRenderingLayers: 1
   renderingLayerMasks: []
   m_SceneBakeData:
     m_Keys:
