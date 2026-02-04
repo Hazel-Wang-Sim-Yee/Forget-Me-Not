@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -13,9 +12,14 @@ public class GameManager : MonoBehaviour
     public int currentCustomerIndex = 0;
     public GameObject NPCPrefab;
     public Transform spawnLocation;
+    public Transform customerDestination;
     public bool isDayActive = true;
     private CashRegisterBehaviour cashRegisterBehaviour;
     public GameObject StartNextDayCanvas;
+
+    private GameObject currentActiveNPC; 
+
+    public Transform xrOrigin;
 
     private void Awake()
     {
@@ -33,42 +37,50 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         totalCustomers = 2;
-        cashRegisterBehaviour = FindObjectOfType<CashRegisterBehaviour>();
+        cashRegisterBehaviour = FindFirstObjectByType<CashRegisterBehaviour>();
     }
 
     void Update()
     {
-        GameObject NPC = GameObject.FindWithTag("NPC");
-        if (NPC == null)
+        if (currentActiveNPC == null)
         {
-            if (currentCustomerIndex + 1 <= totalCustomers && isDayActive)
+            if (currentCustomerIndex < totalCustomers && isDayActive)
             {
                 currentCustomerIndex++;
-                // Spawn next customer logic here
                 SpawnNextCustomer();
             }
-            else if (isDayActive)
+            else if (isDayActive && currentCustomerIndex >= totalCustomers)
             {
-                isDayActive = false;
-                currentEarnings += cashRegisterBehaviour.amountInRegister;
-                Debug.Log("Day " + currentDay + " ended with " + happyCustomers + " happy customers and earnings of $" + currentEarnings);
-                // Reset for next day
-                currentDay++;
-                happyCustomers = 0;
-                currentCustomerIndex = 0;
-                cashRegisterBehaviour.amountInRegister = 0f;
-                cashRegisterBehaviour.UpdateAmountInRegister();
-                StartNextDayCanvas.SetActive(true);
-
+                EndDay();
             }
         }
     }
 
     void SpawnNextCustomer()
     {
-        // Logic to spawn the next customer NPC
-        Debug.Log("Spawning customer " + (currentCustomerIndex));
-        // Instantiate NPC prefab at designated location
-        Instantiate(NPCPrefab, spawnLocation.position, Quaternion.identity);
+        Debug.Log("Spawning customer " + currentCustomerIndex);
+        
+        currentActiveNPC = Instantiate(NPCPrefab, spawnLocation.position, Quaternion.identity);
+
+        NPCBehaviour npcScript = currentActiveNPC.GetComponent<NPCBehaviour>();
+
+        if (npcScript != null)
+        {
+            npcScript.SetTarget(customerDestination);
+        }
+    }
+
+    void EndDay()
+    {
+        isDayActive = false;
+        currentEarnings += cashRegisterBehaviour.amountInRegister;
+        Debug.Log("Day " + currentDay + " ended.");
+        
+        currentDay++;
+        happyCustomers = 0;
+        currentCustomerIndex = 0;
+        cashRegisterBehaviour.amountInRegister = 0f;
+        cashRegisterBehaviour.UpdateAmountInRegister();
+        StartNextDayCanvas.SetActive(true);
     }
 }
