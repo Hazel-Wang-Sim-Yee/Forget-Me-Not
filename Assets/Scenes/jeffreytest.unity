@@ -31774,6 +31774,7 @@ MonoBehaviour:
   customerDestination: {fileID: 218574306}
   isDayActive: 1
   StartNextDayCanvas: {fileID: 1877676563}
+  xrOrigin: {fileID: 441087507}
 --- !u!4 &2017197196
 Transform:
   m_ObjectHideFlags: 0
