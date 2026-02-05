@@ -3,7 +3,6 @@ using TMPro;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactors; 
 using UnityEngine.XR.Interaction.Toolkit.Interactables; 
-using System.Collections.Generic;
 using Firebase;
 using Firebase.Database;
 using Firebase.Extensions;
@@ -16,9 +15,9 @@ public class NPCDialogueFirebase : MonoBehaviour
 
     [Header("XR Settings")]
     [SerializeField]
-    private XRSocketInteractor rightHandSocket; 
+    private XRSocketInteractor rightHandSocket; // For Flower
     [SerializeField]
-    private XRSocketInteractor leftHandSocket;  
+    private XRSocketInteractor leftHandSocket;  // For Money
 
     [Header("UI Settings")]
     [SerializeField]
@@ -28,108 +27,114 @@ public class NPCDialogueFirebase : MonoBehaviour
     public GameObject NPC;
     [SerializeField]
     private GameObject MoneyPrefab;
-    private GameManager gameManager;
+    private NPCBehaviour npcMovement; 
 
     // Internal State
     private string wantedFlowerType;
     private string successResponse;
     private string failResponse;
-    private GameObject selectedObject;
+    private bool transactionComplete = false; // Flag to ensure he doesn't leave twice
 
     void Start()
     {
         NPC = this.gameObject;
         dbRef = FirebaseDatabase.DefaultInstance.RootReference;
+        
+        // ROBUST SCRIPT FINDING (Parent/Self/Children)
+        npcMovement = GetComponent<NPCBehaviour>();
+        if (npcMovement == null) npcMovement = GetComponentInParent<NPCBehaviour>();
+        if (npcMovement == null) npcMovement = GetComponentInChildren<NPCBehaviour>();
+
         FetchNPCDialogue();
     }
 
     void OnEnable()
     {
-        if (rightHandSocket != null)
-        {
-            rightHandSocket.selectEntered.AddListener(CheckFlower);
-        }
+        // Listen for Flower Input
+        if (rightHandSocket != null) rightHandSocket.selectEntered.AddListener(CheckFlower);
+        
+        // NEW: Listen for Money Removal
+        if (leftHandSocket != null) leftHandSocket.selectExited.AddListener(OnMoneyTaken);
     }
 
     void OnDisable()
     {
-        if (rightHandSocket != null)
-        {
-            rightHandSocket.selectEntered.RemoveListener(CheckFlower);
-        }
+        if (rightHandSocket != null) rightHandSocket.selectEntered.RemoveListener(CheckFlower);
+        if (leftHandSocket != null) leftHandSocket.selectExited.RemoveListener(OnMoneyTaken);
     }
 
     void FetchNPCDialogue()
     {
         DialogueBox.text = "Loading...";
-
         dbRef.Child("npc_data").Child("dialogue").Child(npcID).GetValueAsync().ContinueWithOnMainThread(task =>
         {
-            if (task.IsFaulted || task.IsCanceled)
-            {
-                Debug.LogError("Firebase Error: " + task.Exception);
-                return;
-            }
-
-            if (task.IsCompleted)
+            if (task.IsCompleted && task.Result.Exists)
             {
                 DataSnapshot snapshot = task.Result;
-
-                if (snapshot.Exists) 
-                {
-                    DialogueBox.text = snapshot.Child("order").Child("text").Value.ToString();
-                    wantedFlowerType = snapshot.Child("order").Child("item_requested").Value.ToString();
-                    successResponse = snapshot.Child("response_success").Value.ToString();
-                    failResponse = snapshot.Child("response_fail").Value.ToString();
-                    
-                    Debug.Log(npcID + " wants: " + wantedFlowerType);
-                }
-                else
-                {
-                    DialogueBox.text = "I... I don't remember what I wanted.";
-                }
+                DialogueBox.text = snapshot.Child("order").Child("text").Value.ToString();
+                wantedFlowerType = snapshot.Child("order").Child("item_requested").Value.ToString();
+                successResponse = snapshot.Child("response_success").Value.ToString();
+                failResponse = snapshot.Child("response_fail").Value.ToString();
             }
         });
     }
 
     private void CheckFlower(SelectEnterEventArgs args)
     {
-        // 1. Get the object name
-        selectedObject = args.interactableObject.transform.gameObject;
+        GameObject selectedObject = args.interactableObject.transform.gameObject;
         string heldFlowerName = selectedObject.name;
+        GameManager gm = GameManager.Instance;
 
-        Debug.Log("Checking: '" + heldFlowerName + "' against wanted: '" + wantedFlowerType + "'");
-
-        // 2. Check if the name contains the Firebase string
-        // This handles "Sunflower(Clone)" containing "Sunflower"
         if (heldFlowerName.Contains(wantedFlowerType))
         {
             // --- SUCCESS ---
             DialogueBox.text = successResponse;
-            NPC.GetComponent<Renderer>().material.color = Color.green;
-            
+
+            // Spawn Money
             if (leftHandSocket != null && MoneyPrefab != null)
-            {
                 Instantiate(MoneyPrefab, leftHandSocket.transform.position, Quaternion.identity);
-            }
 
-            gameManager = FindFirstObjectByType<GameManager>();
-            if (gameManager != null) gameManager.happyCustomers += 1;
+            if (gm != null) gm.happyCustomers += 1;
 
-            Invoke("LeaveShop", 2.0f); 
+            Destroy(selectedObject);
+            
+            // SET FLAG: Transaction is done, waiting for player to take money
+            transactionComplete = true; 
+
+            // IMPORTANT: We do NOT call TriggerExit here anymore. We wait.
+            Debug.Log("Flower accepted. Waiting for player to take money...");
         }
         else
         {
             // --- FAILURE ---
             DialogueBox.text = failResponse;
-            NPC.GetComponent<Renderer>().material.color = Color.red;
-            Invoke("LeaveShop", 2.0f); 
+            Destroy(selectedObject);
+            
+            // If failed, just leave after 2 seconds (no money to take)
+            if (npcMovement != null && gm != null && gm.spawnLocation != null)
+            {
+                npcMovement.TriggerExit(gm.spawnLocation, 2.0f);
+            }
         }
     }
 
-    public void LeaveShop()
+    // --- NEW FUNCTION: Called when player grabs the money ---
+    private void OnMoneyTaken(SelectExitEventArgs args)
     {
-        if (selectedObject != null) Destroy(selectedObject);
-        Destroy(NPC);
+        // Only exit if the transaction was actually successful
+        if (transactionComplete)
+        {
+            Debug.Log("Money taken! NPC leaving now.");
+            
+            GameManager gm = GameManager.Instance;
+            if (npcMovement != null && gm != null && gm.spawnLocation != null)
+            {
+                // Leave after a short delay (1 second) so it doesn't look instant
+                npcMovement.TriggerExit(gm.spawnLocation, 1.0f);
+            }
+            
+            // Reset flag so it doesn't trigger again
+            transactionComplete = false;
+        }
     }
 }
