@@ -6,10 +6,20 @@ public class MoneyBehaviourScript : MonoBehaviour
     [SerializeField]
     private Collider CashRegisterCollider;
 
+    NPCFlowerCheck npcFlowerCheck;
+
     void Start()
     {
         CashRegisterCollider = FindObjectOfType<CashRegisterBehaviour>().GetComponent<Collider>();
-        moneyValue = Random.Range(5f, 20f);
+        npcFlowerCheck = NPCFlowerCheck.Instance;
+        if (npcFlowerCheck.heldFlowerType == "Bouquet(s)")
+        {
+            moneyValue = 5f;
+        }
+        if (npcFlowerCheck.heldFlowerType == "Bouquet(m)")
+        {
+            moneyValue = 12f;
+        }
     }
 
     void OnTriggerEnter(Collider other)

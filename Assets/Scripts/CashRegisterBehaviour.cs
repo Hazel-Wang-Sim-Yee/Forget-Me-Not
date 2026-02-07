@@ -23,19 +23,6 @@ public class CashRegisterBehaviour : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI amountInRegisterText;
 
-    void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
     public void UnlockRegister()
     {
         drawerJoint.xMotion = ConfigurableJointMotion.Limited;
@@ -53,7 +40,7 @@ public class CashRegisterBehaviour : MonoBehaviour
         if (money != null && isLocked)
         {
             isLocked = false;
-            cashDrawer.transform.localPosition = new Vector3(cashDrawer.transform.localPosition.x + 0.3f, cashDrawer.transform.localPosition.y, cashDrawer.transform.localPosition.z);
+            cashDrawer.transform.localPosition = new Vector3(cashDrawer.transform.localPosition.x, cashDrawer.transform.localPosition.y, cashDrawer.transform.localPosition.z - 0.3f);
         }
         else
         {

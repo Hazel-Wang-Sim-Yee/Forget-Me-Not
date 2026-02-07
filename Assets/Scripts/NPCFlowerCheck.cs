@@ -25,7 +25,7 @@ public class NPCFlowerCheck : MonoBehaviour
 
     public GameObject NPC;
 
-    private string heldFlowerType;
+    public string heldFlowerType;
 
     [SerializeField]
     private GameObject MoneyPrefab;

@@ -7,6 +7,9 @@ public class BouquetWrap : MonoBehaviour
 
     public GameObject bouquetPrefab;
     public bool isWrapped = false;
+    public string bouquetType;
+    [SerializeField]
+    public int bouquetSize;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Ribbon") && !isWrapped)
@@ -19,12 +22,30 @@ public class BouquetWrap : MonoBehaviour
                     allSlotsFilled = false;
                     break;
                 }
+                BouquetToCreate(other.gameObject);
             }
 
             if (allSlotsFilled)
             {
                 WrapBouquet();
             }
+        }
+    }
+
+    private void BouquetToCreate(GameObject other)
+    {
+        
+        if (bouquetType == null)
+        {
+            bouquetType = other.name;
+        }
+        else if (bouquetType == other.name)
+        {
+            return;
+        }
+        else
+        {
+            bouquetType = "mixed";
         }
     }
 
@@ -49,6 +70,15 @@ public class BouquetWrap : MonoBehaviour
         Quaternion rot =
             transform.rotation *
             Quaternion.Euler(90f, 0f, 0f);
+
+        if (bouquetSize >= 3)
+        {
+            bouquetPrefab = Resources.Load<GameObject>("Bouquet(M)_" + bouquetType);
+        }
+        else
+        {
+            bouquetPrefab = Resources.Load<GameObject>("Bouquet(S)_" + bouquetType);
+        }
 
         Instantiate(bouquetPrefab, pos, rot);
         Destroy(gameObject);
