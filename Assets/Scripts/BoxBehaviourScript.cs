@@ -7,33 +7,57 @@ public class BoxBehaviourScript : MonoBehaviour
 {
     public static BoxBehaviourScript Instance;
     public TextMeshProUGUI boxLabel;
-    public Animator boxAnimator;
     public GameObject flowersInside;
-
-    void Start()
-    {
-        boxAnimator = GetComponent<Animator>();
-        boxAnimator.SetBool("isGrabbed", false);
-    }
+    [SerializeField]
+    GameObject leftBoxFlap;
+    [SerializeField]
+    GameObject rightBoxFlap;
+    [SerializeField]
+    GameObject boxLabelObject;
+    [SerializeField]
+    public GameObject CarnationsFlowers;
+    [SerializeField]
+    public GameObject TulipsFlowers;
+    [SerializeField]
+    public GameObject DaisiesFlowers;
+    [SerializeField]
+    public GameObject LiliesFlowers;
+    bool hasFlowers = false;
 
     public void UpdateBoxLabel(string labelText)
     {
         boxLabel.text = labelText;
     }
 
-    void OnGrabbed()
+    public void OpenBoxFlaps()
     {
-        boxAnimator.SetBool("isGrabbed", true);
+        boxLabelObject.SetActive(false);
+        leftBoxFlap.transform.Rotate(Vector3.forward, -240);
+        rightBoxFlap.transform.Rotate(Vector3.forward, 240);
+        if (!hasFlowers)
+        {
+            hasFlowers = true;
+            FlowerTypeInBox(flowersInside);
+        }
     }
 
-    void OnReleased()
+    public void FlowerTypeInBox(GameObject flowerType)
     {
-        boxAnimator.SetBool("isGrabbed", false);
-    }
-
-    public void FlowerTypeInBox(string flowerType)
-    {
-        flowersInside = Resources.Load<GameObject>(flowerType);
-        Instantiate(flowersInside, transform.position, transform.rotation, transform);
+        if (flowerType == CarnationsFlowers)
+        {
+            Instantiate(CarnationsFlowers, new Vector3(transform.position.x - 0.28f, transform.position.y + 0.3f, transform.position.z + 0.2f), transform.rotation, transform);
+        }
+        else if (flowerType == TulipsFlowers)
+        {
+            Instantiate(TulipsFlowers, new Vector3(transform.position.x - 0.28f, transform.position.y + 0.3f, transform.position.z + 0.2f), transform.rotation, transform);
+        }
+        else if (flowerType == DaisiesFlowers)
+        {
+            Instantiate(DaisiesFlowers, new Vector3(transform.position.x - 0.28f, transform.position.y + 0.3f, transform.position.z + 0.2f), transform.rotation, transform);
+        }
+        else if (flowerType == LiliesFlowers)
+        {
+            Instantiate(LiliesFlowers, new Vector3(transform.position.x - 0.28f, transform.position.y + 0.3f, transform.position.z + 0.2f), transform.rotation, transform);
+        }
     }
 }

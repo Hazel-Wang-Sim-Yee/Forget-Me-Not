@@ -39,27 +39,12 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         cashRegisterBehaviour = FindFirstObjectByType<CashRegisterBehaviour>();
-<<<<<<< Updated upstream
-=======
         dayResetScript = FindFirstObjectByType<DayResetScript>();
-        // Prepare our first pool of unique NPCs
-        ResetAvailableNPCs();
 
         if (currentDay == 1)
         {
             StartNextDay();
         }
-    }
-
-    // Creates a list of numbers [0, 1, 2, 3, 4] representing your NPC prefabs
-    void ResetAvailableNPCs()
-    {
-        availableIndices.Clear();
-        for (int i = 0; i < npcPrefabs.Count; i++)
-        {
-            availableIndices.Add(i);
-        }
->>>>>>> Stashed changes
     }
 
     void Update()

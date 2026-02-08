@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class DayResetScript : MonoBehaviour
 {
@@ -17,19 +18,12 @@ public class DayResetScript : MonoBehaviour
 
     GameObject thisBox;
 
-    private void Awake()
+    private void Start()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        StartCoroutine(DayReset());  
     }
 
-    public void DayReset()
+    public IEnumerator DayReset()
     {
         Debug.Log("Day Reset Initiated");
         Debug.Log("Current Day: " + gameManager.currentDay);
@@ -44,26 +38,27 @@ public class DayResetScript : MonoBehaviour
             {
                 Debug.Log("Carnations box spawned");
                 boxBehaviourScript.UpdateBoxLabel("Carnations");
-                boxBehaviourScript.FlowerTypeInBox("flowerCarnation");
+                boxBehaviourScript.flowersInside = boxBehaviourScript.CarnationsFlowers;
             }
             else if (i % 4 == 2)
             {
                 Debug.Log("Tulips box spawned");
                 boxBehaviourScript.UpdateBoxLabel("Tulips");
-                boxBehaviourScript.FlowerTypeInBox("flowerTulip");
+                boxBehaviourScript.flowersInside = boxBehaviourScript.TulipsFlowers;
             }
             else if (i % 4 == 3)
             {
                 Debug.Log("Daisies box spawned");
                 boxBehaviourScript.UpdateBoxLabel("Daisies");
-                boxBehaviourScript.FlowerTypeInBox("flowerDaisy");
+                boxBehaviourScript.flowersInside = boxBehaviourScript.DaisiesFlowers;
             }
-            else
+            else if (i % 4 == 0)
             {
-                Debug.Log("Sunflowers box spawned");
-                boxBehaviourScript.UpdateBoxLabel("Sunflowers");
-                boxBehaviourScript.FlowerTypeInBox("flowerSunflower");
+                Debug.Log("Lilies box spawned");
+                boxBehaviourScript.UpdateBoxLabel("Lilies");
+                boxBehaviourScript.flowersInside = boxBehaviourScript.LiliesFlowers;
             }
+            yield return new WaitForSeconds(0.5f);
         }
     }
 
