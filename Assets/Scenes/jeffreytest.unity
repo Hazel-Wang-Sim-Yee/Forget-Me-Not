@@ -22617,7 +22617,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1476323776}
   - {fileID: 1663810237}
   - {fileID: 1589548684}
   - {fileID: 133610561}
@@ -22637,6 +22636,7 @@ Transform:
   - {fileID: 795686350}
   - {fileID: 376139434}
   - {fileID: 1162257145}
+  - {fileID: 1476323776}
   m_Father: {fileID: 583443252}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1393905696
@@ -23804,7 +23804,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 80a2e919c628982449312125060fa572, type: 3}
 --- !u!4 &1476323776 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4594829020798727596, guid: 80a2e919c628982449312125060fa572, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4135551156176209716, guid: 80a2e919c628982449312125060fa572, type: 3}
   m_PrefabInstance: {fileID: 1476323775}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1478355891
@@ -31800,10 +31800,15 @@ MonoBehaviour:
   currentDay: 1
   currentEarnings: 0
   currentCustomerIndex: 0
-  NPCPrefab: {fileID: 6934152931978116427, guid: ccfe29aa8bb39e54a9a9a2fc3399167b, type: 3}
+  isDayActive: 1
+  npcPrefabs:
+  - {fileID: 6934152931978116427, guid: ccfe29aa8bb39e54a9a9a2fc3399167b, type: 3}
+  - {fileID: 4379045596245078029, guid: ad2fa2a50d4a7504c8537b94309d3a6a, type: 3}
+  - {fileID: 5140725590325288351, guid: 7588e5d1ba61a4447bdea5ffc0a0d7b5, type: 3}
+  - {fileID: 5824516474931633889, guid: d33ee8c99c577f241b69bf6c77b3cc1b, type: 3}
+  - {fileID: 7522648335104848000, guid: 9ff0c902bfa29ec4f93591221675eba7, type: 3}
   spawnLocation: {fileID: 388746065}
   customerDestination: {fileID: 218574306}
-  isDayActive: 1
   StartNextDayCanvas: {fileID: 1877676563}
   xrOrigin: {fileID: 441087507}
 --- !u!4 &2017197196
@@ -34690,6 +34695,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92dd4e2c8193c534283ffa0c564b599c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCBehaviour
+  rotationSpeed: 10
+  idleRotationOffset: 0
 --- !u!114 &2682989750581308591
 MonoBehaviour:
   m_ObjectHideFlags: 0

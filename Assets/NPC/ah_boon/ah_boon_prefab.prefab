@@ -1818,7 +1818,7 @@ GameObject:
   - component: {fileID: 7657762979604159869}
   - component: {fileID: 6103468983257648182}
   m_Layer: 0
-  m_Name: NPC_Root
+  m_Name: ah_boon_prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1855,6 +1855,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92dd4e2c8193c534283ffa0c564b599c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCBehaviour
+  rotationSpeed: 10
+  idleRotationOffset: 0
 --- !u!195 &6103468983257648182
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1950,7 +1952,7 @@ MonoBehaviour:
   rightHandSocket: {fileID: 3413127131833664300}
   leftHandSocket: {fileID: 7316540441560096746}
   DialogueBox: {fileID: 1613007548266593108}
-  NPC: {fileID: 0}
+  NPC: {fileID: 6934152931978116427}
   MoneyPrefab: {fileID: 8897337922782114317, guid: 1f6b8a36847b8194b9305fadfb564ba1, type: 3}
 --- !u!1 &7078544949505926408
 GameObject:
