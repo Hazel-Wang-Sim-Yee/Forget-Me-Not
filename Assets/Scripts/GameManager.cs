@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
 
     public Transform xrOrigin;
 
+    DayResetScript dayResetScript;
+
     private void Awake()
     {
         if (Instance == null)
@@ -36,8 +38,28 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        totalCustomers = 2;
         cashRegisterBehaviour = FindFirstObjectByType<CashRegisterBehaviour>();
+<<<<<<< Updated upstream
+=======
+        dayResetScript = FindFirstObjectByType<DayResetScript>();
+        // Prepare our first pool of unique NPCs
+        ResetAvailableNPCs();
+
+        if (currentDay == 1)
+        {
+            StartNextDay();
+        }
+    }
+
+    // Creates a list of numbers [0, 1, 2, 3, 4] representing your NPC prefabs
+    void ResetAvailableNPCs()
+    {
+        availableIndices.Clear();
+        for (int i = 0; i < npcPrefabs.Count; i++)
+        {
+            availableIndices.Add(i);
+        }
+>>>>>>> Stashed changes
     }
 
     void Update()
@@ -82,5 +104,12 @@ public class GameManager : MonoBehaviour
         cashRegisterBehaviour.amountInRegister = 0f;
         cashRegisterBehaviour.UpdateAmountInRegister();
         StartNextDayCanvas.SetActive(true);
+    }
+
+    void StartNextDay()
+    {
+        isDayActive = true;
+        dayResetScript = FindFirstObjectByType<DayResetScript>();
+        dayResetScript.DayReset();
     }
 }

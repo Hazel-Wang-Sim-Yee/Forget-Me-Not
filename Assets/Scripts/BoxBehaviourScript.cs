@@ -6,9 +6,15 @@ using TMPro;
 public class BoxBehaviourScript : MonoBehaviour
 {
     public static BoxBehaviourScript Instance;
-    public TextMeshPro boxLabel;
+    public TextMeshProUGUI boxLabel;
     public Animator boxAnimator;
     public GameObject flowersInside;
+
+    void Start()
+    {
+        boxAnimator = GetComponent<Animator>();
+        boxAnimator.SetBool("isGrabbed", false);
+    }
 
     public void UpdateBoxLabel(string labelText)
     {
@@ -25,8 +31,9 @@ public class BoxBehaviourScript : MonoBehaviour
         boxAnimator.SetBool("isGrabbed", false);
     }
 
-    void FlowerTypeInBox()
+    public void FlowerTypeInBox(string flowerType)
     {
-        
+        flowersInside = Resources.Load<GameObject>(flowerType);
+        Instantiate(flowersInside, transform.position, transform.rotation, transform);
     }
 }
