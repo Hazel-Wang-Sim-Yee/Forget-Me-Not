@@ -4551,8 +4551,8 @@
     "m_ObjectId": "73b84629a26c44c49b9b53b7ddc27e8b",
     "m_Title": "Vertex Animation",
     "m_Position": {
-        "x": -1129.00048828125,
-        "y": -790.0001220703125
+        "x": -1129.0,
+        "y": -790.0000610351563
     }
 }
 
@@ -5887,8 +5887,8 @@
     "m_ObjectId": "9b24512edd544dffbfa4c5cb4f047f2b",
     "m_Title": "Foam",
     "m_Position": {
-        "x": -2458.00048828125,
-        "y": -772.0001220703125
+        "x": -2458.0,
+        "y": -772.0000610351563
     }
 }
 
@@ -6064,9 +6064,9 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -581.9999389648438,
-            "y": -582.0,
-            "width": 193.99990844726563,
+            "x": -622.0,
+            "y": -581.9999389648438,
+            "width": 194.0,
             "height": 34.0
         }
     },
@@ -6627,8 +6627,8 @@
     "m_ObjectId": "c477547d57404d48abe55966fda68ba8",
     "m_Title": "Depth Gradient",
     "m_Position": {
-        "x": -3507.00048828125,
-        "y": -41.0
+        "x": -3507.0,
+        "y": -41.00006103515625
     }
 }
 
@@ -7219,8 +7219,8 @@
     "m_ObjectId": "d71d86b07a0f47a4b43df43949a0a522",
     "m_Title": "x2 Color Blend and Alpha Tinting",
     "m_Position": {
-        "x": -754.00048828125,
-        "y": 76.9998779296875
+        "x": -754.0,
+        "y": 77.0
     }
 }
 
@@ -7230,7 +7230,7 @@
     "m_ObjectId": "d782987ed4e54785a445ff27f78e4852",
     "m_Title": "Normal Map Textural Animation",
     "m_Position": {
-        "x": -1531.000244140625,
+        "x": -1530.999755859375,
         "y": 689.9998779296875
     }
 }
