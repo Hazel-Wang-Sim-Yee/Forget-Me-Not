@@ -11413,8 +11413,8 @@ Terrain:
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
-  m_DetailObjectDensity: 0.25
+  m_DetailObjectDistance: 15
+  m_DetailObjectDensity: 0.125
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
   m_HeightmapMinimumLODSimplification: 0
@@ -16998,7 +16998,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3161401517313393474, guid: 126afa9510d148042bae2ea7b1827086, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.2400007
+      value: -5.942
       objectReference: {fileID: 0}
     - target: {fileID: 3161401517313393474, guid: 126afa9510d148042bae2ea7b1827086, type: 3}
       propertyPath: m_LocalPosition.y
@@ -17006,7 +17006,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3161401517313393474, guid: 126afa9510d148042bae2ea7b1827086, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 17.587
+      value: 19.193
       objectReference: {fileID: 0}
     - target: {fileID: 3161401517313393474, guid: 126afa9510d148042bae2ea7b1827086, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17442,7 +17442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.ProbeVolume
   mode: 1
-  size: {x: 65.06241, y: 24.574528, z: 65.06221}
+  size: {x: 65.06241, y: 24.574526, z: 65.06221}
   overrideRendererFilters: 0
   minRendererVolumeSize: 0.1
   objectLayerMask:
@@ -17482,7 +17482,7 @@ Transform:
   m_GameObject: {fileID: 1589928512}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.999986, y: 6.7604656, z: 16.000002}
+  m_LocalPosition: {x: 15.999986, y: 6.7604647, z: 16.000002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

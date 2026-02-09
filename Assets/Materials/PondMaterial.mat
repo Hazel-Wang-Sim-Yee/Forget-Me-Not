@@ -66,7 +66,7 @@ Material:
     - _Depth: 0.1
     - _Displacement: 0.15
     - _Displacement_Speed: 54
-    - _Displacement_Strength: -0.15
+    - _Displacement_Strength: -0.22
     - _Foam_Depth: 0.84
     - _Foam_Strength: 0.12
     - _Foam_Tile: 2
