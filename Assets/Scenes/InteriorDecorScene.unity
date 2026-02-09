@@ -35111,10 +35111,10 @@ MonoBehaviour:
   currentDay: 1
   currentEarnings: 0
   currentCustomerIndex: 0
-  isDayActive: 1
-  npcPrefabs: []
+  NPCPrefabs: []
   spawnLocation: {fileID: 388746065}
   customerDestination: {fileID: 0}
+  isDayActive: 1
   StartNextDayCanvas: {fileID: 1877676563}
   xrOrigin: {fileID: 0}
 --- !u!4 &2017197196
