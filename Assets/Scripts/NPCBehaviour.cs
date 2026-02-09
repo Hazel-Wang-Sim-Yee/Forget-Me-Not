@@ -1,6 +1,11 @@
 using UnityEngine;
 using UnityEngine.AI;
-using System.Collections; 
+using System.Collections;
+using UnityEngine.SceneManagement;
+using Firebase;
+using Firebase.Database;
+using Firebase.Extensions;
+using Firebase.Auth; 
 
 public class NPCBehaviour : MonoBehaviour
 {
@@ -15,8 +20,22 @@ public class NPCBehaviour : MonoBehaviour
     [Range(-180, 180)]
     public float idleRotationOffset = 0f; 
 
+    [Header("ROAMING")]
+    public bool isRoaming = false;
+    public float wanderRadius = 15f;
+    public float minWaitTime = 2f;
+    public float maxWaitTime = 5f;
+
+    [Header("DISTANCE INTERACTION")]
+    public float detectionRange = 4.0f; 
+    private Transform playerTransform; 
+    private bool playerIsNear = false;
     private bool isExiting = false; 
     private Vector3 moveDirection;     
+
+    // Firebase Helper Variables
+    private string cleanNpcName; 
+    private string hardcodedUserID = "GuxSIr39D3Y1Sp59VMYAW4LTVnW2"; // Fallback ID
 
     private void Awake()
     {
@@ -25,6 +44,12 @@ public class NPCBehaviour : MonoBehaviour
         
         if (npcAnimator != null) npcModel = npcAnimator.transform;
 
+        cleanNpcName = gameObject.name
+            .Replace("_prefab(Clone)", "")
+            .Replace("(Clone)", "")
+            .Replace("_prefab", "") 
+            .Trim();
+
         Transform canvasTrans = transform.Find("DialogueCanvas");
         if (canvasTrans != null)
         {
@@ -32,53 +57,66 @@ public class NPCBehaviour : MonoBehaviour
             dialogueCanvas.SetActive(false); 
         }
 
-        // IMPORTANT: Prevent Unity from auto-rotating so we can control it manually
+        string sceneName = SceneManager.GetActiveScene().name;
+        if (sceneName == "MainGameScene") 
+        {
+            isRoaming = false; 
+            Transform triggerTrans = transform.Find("DetectionTrigger");
+            if (triggerTrans != null) Destroy(triggerTrans.gameObject);
+        }
+        else 
+        {
+            isRoaming = true; 
+        }
+
         if (agent != null) agent.updateRotation = false; 
     }
 
-    public void SetTarget(Transform destination) 
+    private void Start()
     {
-        if (destination != null)
+        FindPlayer();
+        if (isRoaming) StartCoroutine(WanderRoutine());
+    }
+
+    private void FindPlayer()
+    {
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj != null) 
         {
-            if (agent != null) agent.SetDestination(destination.position);
-            currentTarget = destination; 
+            playerTransform = playerObj.transform;
         }
-    }
-
-    public void TriggerExit(Transform exitPoint, float delaySeconds)
-    {
-        StartCoroutine(ExitRoutine(exitPoint, delaySeconds));
-    }
-
-    IEnumerator ExitRoutine(Transform exitPoint, float delay)
-    {
-        // 1. Wait
-        yield return new WaitForSeconds(delay);
-
-        // 2. Set destination to the Exit
-        SetTarget(exitPoint);
-        isExiting = true; 
-        
-        // Force the Canvas off immediately
-        if (dialogueCanvas != null) dialogueCanvas.SetActive(false);
     }
 
     void Update()
     {
         if (npcAnimator == null || agent == null) return;
 
-        // --- SAFETY CHECK: Destroy if close to Exit ---
+        // 1. CHECK DISTANCE
+        HandleDistanceDetection();
+
+        // 2. FACE PLAYER OVERRIDE
+        // This runs every frame while player is near, ensuring they look at you
+        if (playerIsNear && playerTransform != null)
+        {
+            RotateTowards(playerTransform.position);
+        }
+
+        // 3. EXIT LOGIC
         if (isExiting && currentTarget != null)
         {
             float distToExit = Vector3.Distance(transform.position, currentTarget.position);
-            if (distToExit < 1.5f) 
-            {
-                Destroy(gameObject);
-                return;
-            }
+            if (distToExit < 1.5f) { Destroy(gameObject); return; }
         }
 
-        // CHECK: Are we at the destination?
+        // 4. MOVEMENT & ANIMATION STATES
+        if (playerIsNear)
+        {
+            // MOVED: Play("Greetings") is now in HandleDistanceDetection
+            // We only handle model offset here to allow the Root Rotation to work
+            RotateModelWithOffset();
+            return; 
+        }
+
         if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
         {
             if (isExiting) 
@@ -87,15 +125,14 @@ public class NPCBehaviour : MonoBehaviour
                 return; 
             }
 
-            // --- STATE: IDLE ---
-            npcAnimator.Play("Idle"); // Or "ShopIdle" if that is your animation name
+            npcAnimator.Play("Idle");
             if (dialogueCanvas != null) dialogueCanvas.SetActive(true);
-            RotateRootToTarget();
+            if (!isRoaming) RotateRootToTarget();
+            
             RotateModelWithOffset();
         }
-        else
+        else 
         {
-            // --- STATE: WALKING ---
             npcAnimator.Play("Walking");
             if (dialogueCanvas != null) dialogueCanvas.SetActive(false);
 
@@ -106,6 +143,109 @@ public class NPCBehaviour : MonoBehaviour
             }
             ResetModelRotation();
         }
+    }
+
+    private void HandleDistanceDetection()
+    {
+        if (playerTransform == null) FindPlayer();
+        if (!isRoaming || isExiting || playerTransform == null) return;
+
+        float distance = Vector3.Distance(transform.position, playerTransform.position);
+
+        if (distance <= detectionRange)
+        {
+            if (!playerIsNear)
+            {
+                playerIsNear = true;
+                
+                if (agent != null)
+                {
+                    agent.isStopped = true;
+                }
+
+                // PLAY ANIMATION ONCE (Crucial Fix)
+                npcAnimator.Play("Greetings");
+
+                // UPDATE FIREBASE
+                UpdateFirebaseStatus(true);
+            }
+        }
+        else if (playerIsNear && distance > detectionRange)
+        {
+            playerIsNear = false;
+            
+            if (agent != null) 
+            {
+                agent.isStopped = false;
+            }
+        }
+    }
+
+    private void UpdateFirebaseStatus(bool status)
+    {
+        string userId = hardcodedUserID;
+        if (FirebaseAuth.DefaultInstance.CurrentUser != null)
+        {
+            userId = FirebaseAuth.DefaultInstance.CurrentUser.UserId;
+        }
+
+        DatabaseReference dbRef = FirebaseDatabase.DefaultInstance.RootReference;
+        dbRef.Child("users").Child(userId).Child("npcs").Child(cleanNpcName).SetValueAsync(status);
+    }
+
+    private void RotateTowards(Vector3 targetPos)
+    {
+        Vector3 direction = (targetPos - transform.position).normalized;
+        direction.y = 0; 
+        if (direction != Vector3.zero)
+        {
+            Quaternion lookRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, rotationSpeed * Time.deltaTime);
+        }
+    }
+
+    public void SetTarget(Transform destination) 
+    {
+        if (destination != null && agent != null)
+        {
+            agent.SetDestination(destination.position);
+            currentTarget = destination; 
+        }
+    }
+
+    public void TriggerExit(Transform exitPoint, float delaySeconds)
+    {
+        StopAllCoroutines();
+        StartCoroutine(ExitRoutine(exitPoint, delaySeconds));
+    }
+
+    IEnumerator WanderRoutine()
+    {
+        while (!isExiting)
+        {
+            Vector3 newDest = GetRandomNavMeshPoint(transform.position, wanderRadius);
+            agent.SetDestination(newDest);
+            while (agent.pathPending || agent.remainingDistance > agent.stoppingDistance) { yield return null; }
+            float wait = Random.Range(minWaitTime, maxWaitTime);
+            yield return new WaitForSeconds(wait);
+        }
+    }
+
+    private Vector3 GetRandomNavMeshPoint(Vector3 center, float radius)
+    {
+        Vector3 randomDirection = Random.insideUnitSphere * radius;
+        randomDirection += center;
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(randomDirection, out hit, radius, 1)) return hit.position;
+        return center;
+    }
+
+    IEnumerator ExitRoutine(Transform exitPoint, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SetTarget(exitPoint);
+        isExiting = true; 
+        if (dialogueCanvas != null) dialogueCanvas.SetActive(false);
     }
 
     void RotateRootToMovement()

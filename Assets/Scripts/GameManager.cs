@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections.Generic; // Required for List
 
 public class GameManager : MonoBehaviour
 {
@@ -10,7 +11,10 @@ public class GameManager : MonoBehaviour
     public int currentDay = 1;
     public float currentEarnings = 0;
     public int currentCustomerIndex = 0;
-    public GameObject NPCPrefab;
+
+    public GameObject[] NPCPrefabs; 
+    private List<GameObject> availableNPCs = new List<GameObject>();
+
     public Transform spawnLocation;
     public Transform customerDestination;
     public bool isDayActive = true;
@@ -65,12 +69,27 @@ public class GameManager : MonoBehaviour
 
     void SpawnNextCustomer()
     {
+        if (NPCPrefabs == null || NPCPrefabs.Length == 0)
+        {
+            Debug.LogError("No NPC prefabs assigned!");
+            return;
+        }
+
+        if (availableNPCs.Count == 0)
+        {
+            availableNPCs.AddRange(NPCPrefabs);
+        }
+
         Debug.Log("Spawning customer " + currentCustomerIndex);
         
-        currentActiveNPC = Instantiate(NPCPrefab, spawnLocation.position, Quaternion.identity);
+        int randomIndex = Random.Range(0, availableNPCs.Count);
+        GameObject selectedNPC = availableNPCs[randomIndex];
+
+        currentActiveNPC = Instantiate(selectedNPC, spawnLocation.position, Quaternion.identity);
+
+        availableNPCs.RemoveAt(randomIndex);
 
         NPCBehaviour npcScript = currentActiveNPC.GetComponent<NPCBehaviour>();
-
         if (npcScript != null)
         {
             npcScript.SetTarget(customerDestination);
@@ -86,6 +105,9 @@ public class GameManager : MonoBehaviour
         currentDay++;
         happyCustomers = 0;
         currentCustomerIndex = 0;
+        
+        availableNPCs.Clear();
+
         cashRegisterBehaviour.amountInRegister = 0f;
         cashRegisterBehaviour.UpdateAmountInRegister();
         StartNextDayCanvas.SetActive(true);
