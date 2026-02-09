@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2265023897842434227}
   - component: {fileID: 8240689876818958452}
   - component: {fileID: 4876326568552455987}
+  - component: {fileID: 7237596491720636623}
   m_Layer: 0
   m_Name: spotlightSingle
   m_TagString: Untagged
@@ -91,6 +92,28 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7237596491720636623
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4928658325296148312}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 441988400978365671, guid: e47f2d8bc83ebf946a7dfc9c6f81c5a8, type: 3}
 --- !u!1001 &4188326937091685933
 PrefabInstance:
   m_ObjectHideFlags: 0
