@@ -1,6 +1,8 @@
 using UnityEngine;
 using TMPro;
 using System.Collections.Generic; // Required for List
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Management;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,6 +22,7 @@ public class GameManager : MonoBehaviour
     public bool isDayActive = true;
     private CashRegisterBehaviour cashRegisterBehaviour;
     public GameObject StartNextDayCanvas;
+    public TMP_Text StartNextDayCanvasText;
 
     private GameObject currentActiveNPC; 
 
@@ -110,6 +113,7 @@ public class GameManager : MonoBehaviour
 
         cashRegisterBehaviour.amountInRegister = 0f;
         cashRegisterBehaviour.UpdateAmountInRegister();
+        StartNextDayCanvasText.text = "Day " + (currentDay) + " complete!" + "\nEarnings: $" + currentEarnings.ToString("F2") + "\nTap to go to town.";
         StartNextDayCanvas.SetActive(true);
     }
 
@@ -118,5 +122,10 @@ public class GameManager : MonoBehaviour
         isDayActive = true;
         dayResetScript = FindFirstObjectByType<DayResetScript>();
         dayResetScript.DayReset();
+    }
+
+    void OnSceneLoaded()
+    {
+        xrOrigin.position = Vector3.zero;
     }
 }

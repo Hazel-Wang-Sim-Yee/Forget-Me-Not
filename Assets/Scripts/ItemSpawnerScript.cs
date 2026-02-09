@@ -14,6 +14,7 @@ public class ItemSpawnerScript : MonoBehaviour
 
     public void SpawnItem()
     {
+        Debug.Log("Spawning item...");  
         Instantiate(itemPrefab, spawnPoint.position, spawnPoint.rotation);
     }
 }

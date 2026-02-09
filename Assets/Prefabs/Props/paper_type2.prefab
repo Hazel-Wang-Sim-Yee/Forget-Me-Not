@@ -268,6 +268,10 @@ MonoBehaviour:
   isWrapped: 0
   bouquetType: 
   bouquetSize: 1
+  lilyBouquetPrefab: {fileID: 6292660821345091970, guid: 1771037a0e523204aa81681f107c06d2, type: 3}
+  tulipBouquetPrefab: {fileID: 5885127251233542616, guid: da92616a31da4fb479b43a9f09472c7e, type: 3}
+  daisyBouquetPrefab: {fileID: 379348181319377656, guid: e702a9bc9c863ee43b55f136ce7df625, type: 3}
+  carnationBouquetPrefab: {fileID: 4049583817957833671, guid: 21321c9b4494e4c4c99b51cdf15880a1, type: 3}
 --- !u!1 &7696437211970576427
 GameObject:
   m_ObjectHideFlags: 0

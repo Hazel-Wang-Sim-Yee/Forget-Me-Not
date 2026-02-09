@@ -1,5 +1,8 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
+using System.Collections.Generic;
 
 public class BouquetWrap : MonoBehaviour
 {
@@ -7,9 +10,21 @@ public class BouquetWrap : MonoBehaviour
 
     public GameObject bouquetPrefab;
     public bool isWrapped = false;
-    public string bouquetType;
+    public string bouquetType = null;
+
     [SerializeField]
-    public int bouquetSize;
+    GameObject lilyBouquetPrefab;
+
+    [SerializeField]
+    GameObject tulipBouquetPrefab;
+
+    [SerializeField]
+    GameObject daisyBouquetPrefab;
+
+    [SerializeField]
+    GameObject carnationBouquetPrefab;
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Ribbon") && !isWrapped)
@@ -22,30 +37,35 @@ public class BouquetWrap : MonoBehaviour
                     allSlotsFilled = false;
                     break;
                 }
-                BouquetToCreate(other.gameObject);
             }
 
             if (allSlotsFilled)
             {
+                Debug.Log("Wrapping bouquet...");
                 WrapBouquet();
             }
         }
     }
 
-    private void BouquetToCreate(GameObject other)
+    public void BouquetToCreate(UnityEngine.XR.Interaction.Toolkit.SelectEnterEventArgs other)
     {
-        
-        if (bouquetType == null)
+        UnityEngine.XR.Interaction.Toolkit.Interactables.IXRSelectInteractable interactable = other.interactableObject;
+        Debug.Log(interactable.transform.gameObject.name);
+        Debug.Log("Current bouquet type: " + bouquetType);
+        if (bouquetType == "")
         {
-            bouquetType = other.name;
+            bouquetType = interactable.transform.gameObject.name;
+            Debug.Log("Set bouquet type to: " + bouquetType);
         }
-        else if (bouquetType == other.name)
+        else if (bouquetType == interactable.transform.gameObject.name)
         {
+            Debug.Log("Bouquet type already set to: " + bouquetType);
             return;
         }
         else
         {
             bouquetType = "mixed";
+            Debug.Log("Set bouquet type to mixed");
         }
     }
 
@@ -71,15 +91,30 @@ public class BouquetWrap : MonoBehaviour
             transform.rotation *
             Quaternion.Euler(90f, 0f, 0f);
 
-        if (bouquetSize >= 3)
+        if (bouquetType == "flowerLily(Clone)")
         {
-            bouquetPrefab = Resources.Load<GameObject>("Bouquet(M)_" + bouquetType);
+            bouquetPrefab = lilyBouquetPrefab;
+        }
+        else if (bouquetType == "flowerTulip(Clone)")
+        {
+            bouquetPrefab = tulipBouquetPrefab;
+        }
+        else if (bouquetType == "flowerDaisy(Clone)")
+        {
+            bouquetPrefab = daisyBouquetPrefab;
+        }
+        else if (bouquetType == "flowerCarnation(Clone)")
+        {
+            bouquetPrefab = carnationBouquetPrefab;
         }
         else
         {
-            bouquetPrefab = Resources.Load<GameObject>("Bouquet(S)_" + bouquetType);
+            // Default to a mixed bouquet prefab if needed
+            bouquetPrefab = daisyBouquetPrefab; // Example default
         }
 
+        Debug.Log("Creating bouquet of type: " + bouquetType);
+        Debug.Log(bouquetPrefab.name);
         Instantiate(bouquetPrefab, pos, rot);
         Destroy(gameObject);
     }

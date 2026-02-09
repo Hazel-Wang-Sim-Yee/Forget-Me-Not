@@ -1359,7 +1359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40203effbba469f44889413d3ae09f9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogueFirebase
-  npcID: Uncle_Tan
+  npcID: uncle_tan
   rightHandSocket: {fileID: 8424742527916778547}
   leftHandSocket: {fileID: 2906658858893065717}
   DialogueBox: {fileID: 6978302359137651281}
@@ -1864,6 +1864,7 @@ MonoBehaviour:
   wanderRadius: 15
   minWaitTime: 2
   maxWaitTime: 5
+  detectionRange: 4
 --- !u!195 &2807107621434338420
 NavMeshAgent:
   m_ObjectHideFlags: 0
