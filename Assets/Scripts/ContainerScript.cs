@@ -13,22 +13,17 @@ public class ContainerScript : MonoBehaviour
     public GameObject flowerToStock;
 
     [SerializeField]
-    public UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor socket;
+    List<GameObject> containerSockets;
 
     public void OnSelectEnter()
     {
         flowerInBoxScript = FindFirstObjectByType<FlowerInBoxScript>();
         flowerInBoxScript.StockFlowersInBox();
-        Instantiate(flowerToStock, transform.position, transform.rotation, transform);
-        Instantiate(flowerToStock, new Vector3(transform.position.x + 0.1f, transform.position.y +0.1f, transform.position.z + 0.1f), transform.rotation, transform);
-        Instantiate(flowerToStock, new Vector3(transform.position.x - 0.1f, transform.position.y, transform.position.z - 0.1f), transform.rotation, transform);
-        Instantiate(flowerToStock, new Vector3(transform.position.x - 0.1f, transform.position.y + 0.1f, transform.position.z - 0.1f), transform.rotation, transform);
-        Instantiate(flowerToStock, new Vector3(transform.position.x + 0.1f, transform.position.y, transform.position.z), transform.rotation, transform);
-        Instantiate(flowerToStock, new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z + 0.1f), transform.rotation, transform);
-    }
-
-    void Start()
-    {
-        socket.enabled = true;
+        flowerToStock = flowerInBoxScript.basePrefab;
+        foreach (var socket in containerSockets)
+        {
+            Debug.Log("Flower instantiated in socket");
+            Instantiate(flowerToStock, new Vector3(socket.transform.position.x, socket.transform.position.y + 0.17f, socket.transform.position.z - 0.09f), socket.transform.rotation, socket.transform);
+        }
     }
 }

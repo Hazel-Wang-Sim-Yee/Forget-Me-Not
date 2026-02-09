@@ -6,6 +6,7 @@ using TMPro;
 public class BoxBehaviourScript : MonoBehaviour
 {
     public static BoxBehaviourScript Instance;
+    FlowerInBoxScript flowerInBoxScript;
     public TextMeshProUGUI boxLabel;
     public GameObject flowersInside;
     [SerializeField]
@@ -23,6 +24,8 @@ public class BoxBehaviourScript : MonoBehaviour
     [SerializeField]
     public GameObject LiliesFlowers;
     bool hasFlowers = false;
+
+    GameObject flowersInsideGrp;
 
     public void UpdateBoxLabel(string labelText)
     {
@@ -45,19 +48,22 @@ public class BoxBehaviourScript : MonoBehaviour
     {
         if (flowerType == CarnationsFlowers)
         {
-            Instantiate(CarnationsFlowers, new Vector3(transform.position.x - 0.28f, transform.position.y + 0.3f, transform.position.z + 0.2f), transform.rotation, transform);
+            flowersInsideGrp = Instantiate(CarnationsFlowers, new Vector3(transform.position.x - 0.28f, transform.position.y + 0.3f, transform.position.z + 0.2f), transform.rotation, transform) as GameObject;
         }
         else if (flowerType == TulipsFlowers)
         {
-            Instantiate(TulipsFlowers, new Vector3(transform.position.x - 0.28f, transform.position.y + 0.3f, transform.position.z + 0.2f), transform.rotation, transform);
+            flowersInsideGrp = Instantiate(TulipsFlowers, new Vector3(transform.position.x - 0.28f, transform.position.y + 0.3f, transform.position.z + 0.2f), transform.rotation, transform) as GameObject;
         }
         else if (flowerType == DaisiesFlowers)
         {
-            Instantiate(DaisiesFlowers, new Vector3(transform.position.x - 0.28f, transform.position.y + 0.3f, transform.position.z + 0.2f), transform.rotation, transform);
+            flowersInsideGrp = Instantiate(DaisiesFlowers, new Vector3(transform.position.x - 0.28f, transform.position.y + 0.3f, transform.position.z + 0.2f), transform.rotation, transform) as GameObject;
         }
         else if (flowerType == LiliesFlowers)
         {
-            Instantiate(LiliesFlowers, new Vector3(transform.position.x - 0.28f, transform.position.y + 0.3f, transform.position.z + 0.2f), transform.rotation, transform);
+            flowersInsideGrp = Instantiate(LiliesFlowers, new Vector3(transform.position.x - 0.28f, transform.position.y + 0.3f, transform.position.z + 0.2f), transform.rotation, transform) as GameObject;
         }
+
+        flowerInBoxScript = flowersInsideGrp.GetComponent<FlowerInBoxScript>();
+        flowerInBoxScript.box = this.gameObject;
     }
 }

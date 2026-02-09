@@ -22,20 +22,23 @@ public class FlowerInBoxScript : MonoBehaviour
     [SerializeField]
     public GameObject basePrefab;
 
+    public bool emptyNextStock = false;
+
     public void StockFlowersInBox()
     {
         containerScript = FindFirstObjectByType<ContainerScript>();
         containerScript.flowerToStock = basePrefab;
         Debug.Log("Flower stocked in box");
-        if (allFlowersInBox.transform.childCount == 1)
+        if (emptyNextStock)
         {
+            Debug.Log("Flower box emptied");
             Destroy(box);
             foreach (GameObject flower in otherFlowersInGroup)
             {
                 Destroy(flower);
             }
-            containerScript.socket.enabled = false;
             Destroy(flowerGroup);
+            Destroy(allFlowersInBox);
         }
         else
         {
@@ -44,7 +47,7 @@ public class FlowerInBoxScript : MonoBehaviour
                 Destroy(flower);
             }
             Destroy(flowerGroup);
-            containerScript.socket.enabled = false;
+            emptyNextStock = true;
         }
     }
 }
