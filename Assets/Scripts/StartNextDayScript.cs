@@ -26,4 +26,10 @@ public class StartNextDayScript : MonoBehaviour
         StartNextDayCanvas.SetActive(false);
         Debug.Log("isDayActive set to true");
     }   
+
+    public void goToExteriorScene()
+    {
+        Debug.Log("Loading Exterior Scene...");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("ExteriorScene");
+    }
 }
