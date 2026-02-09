@@ -181,7 +181,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 369064549417544196}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 2.2203105e-16, y: -0.000000014901616, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.020291492, y: 0.02029149, z: 0.020291492}
   m_ConstrainProportionsScale: 1
@@ -191,7 +191,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.077, y: 1.599}
+  m_AnchoredPosition: {x: -2.077, y: 1.5990001}
   m_SizeDelta: {x: 0, y: 83}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &789747315770199407
@@ -231,7 +231,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 4
+  m_PixelsPerUnitMultiplier: 12
 --- !u!114 &8779884751059990152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1028,8 +1028,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: dialogue placeholder
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d962fc8b57d736c49a7007ccb24bbc23, type: 2}
-  m_sharedMaterial: {fileID: 5591004582890986203, guid: d962fc8b57d736c49a7007ccb24bbc23, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e91a829a98a11ec41b64a4fc12359bbc, type: 2}
+  m_sharedMaterial: {fileID: -8805813628938628589, guid: e91a829a98a11ec41b64a4fc12359bbc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1952,6 +1952,7 @@ MonoBehaviour:
   rightHandSocket: {fileID: 3413127131833664300}
   leftHandSocket: {fileID: 7316540441560096746}
   DialogueBox: {fileID: 1613007548266593108}
+  dialoguePanel: {fileID: 8333029134467130189}
   NPC: {fileID: 6934152931978116427}
   MoneyPrefab: {fileID: 8897337922782114317, guid: 1f6b8a36847b8194b9305fadfb564ba1, type: 3}
 --- !u!1 &7078544949505926408
