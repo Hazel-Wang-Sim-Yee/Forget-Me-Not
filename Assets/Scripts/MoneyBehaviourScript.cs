@@ -12,14 +12,6 @@ public class MoneyBehaviourScript : MonoBehaviour
     {
         CashRegisterCollider = FindObjectOfType<CashRegisterBehaviour>().GetComponent<Collider>();
         npcFlowerCheck = NPCFlowerCheck.Instance;
-        if (npcFlowerCheck.heldFlowerType == "Bouquet(s)")
-        {
-            moneyValue = 5f;
-        }
-        if (npcFlowerCheck.heldFlowerType == "Bouquet(m)")
-        {
-            moneyValue = 12f;
-        }
     }
 
     void OnTriggerEnter(Collider other)

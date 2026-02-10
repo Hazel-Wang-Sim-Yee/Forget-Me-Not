@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3595926122271790334}
   - component: {fileID: 2819232254112981118}
   - component: {fileID: 6775824294342792784}
+  - component: {fileID: 6776275613243884706}
   m_Layer: 0
   m_Name: tulipPetals
   m_TagString: Untagged
@@ -40,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3252672241873928094}
-  m_Mesh: {fileID: -5314138013030016664, guid: 225f18c1d19a0a947a6b0a33c4190ff4, type: 3}
+  m_Mesh: {fileID: 4300000, guid: ee178e5ab2d95e04bbf3daefb756e305, type: 2}
 --- !u!23 &6775824294342792784
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -90,6 +91,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6776275613243884706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3252672241873928094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.2
 --- !u!1 &3954764884302864682
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,6 +115,7 @@ GameObject:
   - component: {fileID: 6064674865929645563}
   - component: {fileID: 3643901917222489333}
   - component: {fileID: 5200073850131768662}
+  - component: {fileID: 8494886621372895902}
   m_Layer: 0
   m_Name: tulipLeaves
   m_TagString: Untagged
@@ -130,7 +145,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3954764884302864682}
-  m_Mesh: {fileID: -2258419422713296198, guid: 225f18c1d19a0a947a6b0a33c4190ff4, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 8b636b6c0f410514dbbfc1f099744ac3, type: 2}
 --- !u!23 &5200073850131768662
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -180,6 +195,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8494886621372895902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3954764884302864682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.5
 --- !u!1 &4233728808131348962
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,6 +219,7 @@ GameObject:
   - component: {fileID: 1630767762253147343}
   - component: {fileID: 1151959214865252873}
   - component: {fileID: 7982391390574446638}
+  - component: {fileID: 2101539609794404148}
   m_Layer: 0
   m_Name: staticTulip
   m_TagString: Untagged
@@ -222,7 +251,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233728808131348962}
-  m_Mesh: {fileID: 4949895944030729570, guid: 225f18c1d19a0a947a6b0a33c4190ff4, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 59993ee6f77950941bd360d0737861c0, type: 2}
 --- !u!23 &7982391390574446638
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -272,3 +301,16 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2101539609794404148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4233728808131348962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.2

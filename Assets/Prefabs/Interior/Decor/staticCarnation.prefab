@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3745760338481102949}
   - component: {fileID: 6116939780888284053}
   - component: {fileID: 1130606226065894180}
+  - component: {fileID: 127242309692788376}
   m_Layer: 0
   m_Name: carnationLeaves
   m_TagString: Untagged
@@ -40,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1615336573642180412}
-  m_Mesh: {fileID: -2300986983512391956, guid: fc669895b5c4abf459483c79f353fae0, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 2133f6af359d4c34ebd9223d17ca8768, type: 2}
 --- !u!23 &1130606226065894180
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -90,6 +91,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &127242309692788376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615336573642180412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.2
 --- !u!1 &2074062565437308165
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,6 +115,7 @@ GameObject:
   - component: {fileID: 2065830342385868026}
   - component: {fileID: 1501218512795011714}
   - component: {fileID: 6908681410102002665}
+  - component: {fileID: 7739393007183413742}
   m_Layer: 0
   m_Name: carnationLeaves1
   m_TagString: Untagged
@@ -130,7 +145,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2074062565437308165}
-  m_Mesh: {fileID: -5276137334667763393, guid: fc669895b5c4abf459483c79f353fae0, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 2a62946d1fbdf81438404c31e40c01db, type: 2}
 --- !u!23 &6908681410102002665
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -180,6 +195,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7739393007183413742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074062565437308165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.2
 --- !u!1 &4332835476073838836
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,6 +219,7 @@ GameObject:
   - component: {fileID: 7360447410470661642}
   - component: {fileID: 2273350040159912972}
   - component: {fileID: 6037834187321293369}
+  - component: {fileID: 412761939254216554}
   m_Layer: 0
   m_Name: carnationPetals
   m_TagString: Untagged
@@ -220,7 +249,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4332835476073838836}
-  m_Mesh: {fileID: -7160148428617845986, guid: fc669895b5c4abf459483c79f353fae0, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 2c855ca5d6768584a829b3834ce56ed3, type: 2}
 --- !u!23 &6037834187321293369
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -270,6 +299,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &412761939254216554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4332835476073838836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.2
 --- !u!1 &6480255606495741081
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,6 +323,7 @@ GameObject:
   - component: {fileID: 321108819857081119}
   - component: {fileID: 2298802701867253449}
   - component: {fileID: 1666767658470817498}
+  - component: {fileID: 1029051524422070025}
   m_Layer: 0
   m_Name: staticCarnation
   m_TagString: Untagged
@@ -313,7 +356,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6480255606495741081}
-  m_Mesh: {fileID: -8275131197705070248, guid: fc669895b5c4abf459483c79f353fae0, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 508b16f34160dc24083a3905a89760f6, type: 2}
 --- !u!23 &1666767658470817498
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -363,3 +406,16 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1029051524422070025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6480255606495741081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.1

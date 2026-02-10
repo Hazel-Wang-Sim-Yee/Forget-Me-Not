@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2938491072188718170}
   - component: {fileID: 2360930700340170872}
   - component: {fileID: 86926511183796867}
+  - component: {fileID: 4083743607292646323}
   m_Layer: 0
   m_Name: MR_DoorHandle_Out
   m_TagString: Untagged
@@ -40,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1896576314562273478}
-  m_Mesh: {fileID: -1756687914112047668, guid: 794d7fab7a4b2714389cc3aab316174c, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 955e77df3053d9040a6ea120c926a422, type: 2}
 --- !u!23 &86926511183796867
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -90,6 +91,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4083743607292646323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896576314562273478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.3
 --- !u!1 &2324036130841888816
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,6 +388,7 @@ GameObject:
   - component: {fileID: 9059898508309460484}
   - component: {fileID: 8472631619056523071}
   - component: {fileID: 7694850678467498727}
+  - component: {fileID: 2456084641395970553}
   m_Layer: 0
   m_Name: MR_DoorHandle_In
   m_TagString: Untagged
@@ -403,7 +418,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6544291077010069668}
-  m_Mesh: {fileID: 6452643044424182588, guid: 794d7fab7a4b2714389cc3aab316174c, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 54c6264aa4d257f49b64b93d7623532f, type: 2}
 --- !u!23 &7694850678467498727
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -453,6 +468,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2456084641395970553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6544291077010069668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.3
 --- !u!1 &6825436177097339272
 GameObject:
   m_ObjectHideFlags: 0

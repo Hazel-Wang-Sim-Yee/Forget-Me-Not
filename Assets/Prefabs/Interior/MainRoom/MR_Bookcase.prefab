@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5489586391196581691}
   - component: {fileID: 8737546907167199773}
   - component: {fileID: 7024445452493247007}
+  - component: {fileID: 1781029447055417573}
   m_Layer: 0
   m_Name: MR_BCDrawerHandle_L
   m_TagString: Untagged
@@ -41,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3112204421866835319}
-  m_Mesh: {fileID: 2101080783663596553, guid: 8ad8d957fbadee949b02c1ee4a16668b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 70ebfa894f4e0674b8cf76f6d9948f6c, type: 2}
 --- !u!23 &8737546907167199773
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -113,6 +114,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2101080783663596553, guid: 8ad8d957fbadee949b02c1ee4a16668b, type: 3}
+--- !u!114 &1781029447055417573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3112204421866835319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.2
 --- !u!1 &4781665283162700291
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,6 +253,7 @@ GameObject:
   - component: {fileID: 1030947906837197626}
   - component: {fileID: 1257747278709515066}
   - component: {fileID: 1137449095421168205}
+  - component: {fileID: 4267037541314278664}
   m_Layer: 0
   m_Name: MR_BCDrawerHandle_R
   m_TagString: Untagged
@@ -268,7 +283,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5402650625544840526}
-  m_Mesh: {fileID: -5796352225337553500, guid: 8ad8d957fbadee949b02c1ee4a16668b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 072fcfc85355c104f840b8bbd7ff5497, type: 2}
 --- !u!23 &1257747278709515066
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -340,6 +355,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5796352225337553500, guid: 8ad8d957fbadee949b02c1ee4a16668b, type: 3}
+--- !u!114 &4267037541314278664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5402650625544840526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.2
 --- !u!1 &7699013579316232243
 GameObject:
   m_ObjectHideFlags: 0

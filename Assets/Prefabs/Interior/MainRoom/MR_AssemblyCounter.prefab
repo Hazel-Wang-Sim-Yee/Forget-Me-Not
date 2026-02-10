@@ -243,6 +243,7 @@ GameObject:
   - component: {fileID: 8975822282390400330}
   - component: {fileID: 3844343991682493703}
   - component: {fileID: 8825425116922742618}
+  - component: {fileID: 1121273031991848457}
   m_Layer: 0
   m_Name: MR_ACDrawerHandle_L
   m_TagString: Untagged
@@ -272,7 +273,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3853104074406997553}
-  m_Mesh: {fileID: -3639328309764656496, guid: a3c921912451c6b4baa819ff699ca424, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 3eaa7c94e3c15074db3be5871b91a5f3, type: 2}
 --- !u!23 &3844343991682493703
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -344,6 +345,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3639328309764656496, guid: a3c921912451c6b4baa819ff699ca424, type: 3}
+--- !u!114 &1121273031991848457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3853104074406997553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.2
 --- !u!1 &4315716115200050229
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,6 +484,7 @@ GameObject:
   - component: {fileID: 3628563824908514478}
   - component: {fileID: 1803311711805564149}
   - component: {fileID: 8841972236920127835}
+  - component: {fileID: 150955080250317952}
   m_Layer: 0
   m_Name: MR_ACDrawerHandle_M
   m_TagString: Untagged
@@ -499,7 +514,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5202917413636776422}
-  m_Mesh: {fileID: -905370127457261116, guid: a3c921912451c6b4baa819ff699ca424, type: 3}
+  m_Mesh: {fileID: 4300000, guid: cb259dcdade8d4f45af0ff13a9e9270e, type: 2}
 --- !u!23 &1803311711805564149
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -571,6 +586,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -905370127457261116, guid: a3c921912451c6b4baa819ff699ca424, type: 3}
+--- !u!114 &150955080250317952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5202917413636776422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.2
 --- !u!1 &6883400267602021815
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,6 +611,7 @@ GameObject:
   - component: {fileID: 7132830271996513354}
   - component: {fileID: 6337774496148541138}
   - component: {fileID: 4626709146288371748}
+  - component: {fileID: 841761428341600583}
   m_Layer: 0
   m_Name: MR_ACDrawerHandle_R
   m_TagString: Untagged
@@ -612,7 +641,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6883400267602021815}
-  m_Mesh: {fileID: 5955939251089930172, guid: a3c921912451c6b4baa819ff699ca424, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 630cfe7e2fc48f1488014581cc1ddf89, type: 2}
 --- !u!23 &6337774496148541138
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -684,6 +713,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5955939251089930172, guid: a3c921912451c6b4baa819ff699ca424, type: 3}
+--- !u!114 &841761428341600583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6883400267602021815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.2
 --- !u!1 &7959785943349425603
 GameObject:
   m_ObjectHideFlags: 0

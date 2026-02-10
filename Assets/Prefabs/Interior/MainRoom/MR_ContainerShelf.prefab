@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 851934387784772527}
   - component: {fileID: 4081677002888405851}
   - component: {fileID: 6604831085274144425}
+  - component: {fileID: 7249742052199129878}
   m_Layer: 0
   m_Name: MR_ContainerShelf
   m_TagString: Untagged
@@ -41,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7505212458852400150}
-  m_Mesh: {fileID: -3648672120833480023, guid: 2c1272150de6137439b121f19ff65673, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 9ea36258e3004a94898ee424ef7bbca7, type: 2}
 --- !u!23 &4081677002888405851
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -113,3 +114,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3648672120833480023, guid: 2c1272150de6137439b121f19ff65673, type: 3}
+--- !u!114 &7249742052199129878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7505212458852400150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.6

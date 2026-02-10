@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 858938597870323224}
   - component: {fileID: 3160149507940434549}
   - component: {fileID: 5293679563100177166}
+  - component: {fileID: 2749020457583470425}
   m_Layer: 0
   m_Name: spotlightBody
   m_TagString: Untagged
@@ -41,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1722702839010765956}
-  m_Mesh: {fileID: 7940708999313063954, guid: e47f2d8bc83ebf946a7dfc9c6f81c5a8, type: 3}
+  m_Mesh: {fileID: 0}
 --- !u!23 &5293679563100177166
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -92,6 +93,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2749020457583470425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722702839010765956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.4
 --- !u!1 &2608984133315493164
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,6 +245,7 @@ GameObject:
   - component: {fileID: 402507792460486774}
   - component: {fileID: 2077458584320535329}
   - component: {fileID: -5840679444752101420}
+  - component: {fileID: 7201813551631361780}
   m_Layer: 0
   m_Name: spotlightYaw
   m_TagString: Untagged
@@ -261,7 +276,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3600360407843427971}
-  m_Mesh: {fileID: -1461233547806918031, guid: e47f2d8bc83ebf946a7dfc9c6f81c5a8, type: 3}
+  m_Mesh: {fileID: 0}
 --- !u!23 &2077458584320535329
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -328,8 +343,21 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1461233547806918031, guid: e47f2d8bc83ebf946a7dfc9c6f81c5a8, type: 3}
+--- !u!114 &7201813551631361780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3600360407843427971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.3
