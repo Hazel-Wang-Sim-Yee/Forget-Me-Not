@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6279149624640324208}
   - component: {fileID: 1900435930122294446}
   - component: {fileID: 4801089696773858102}
+  - component: {fileID: 4199257331831822925}
   m_Layer: 0
   m_Name: pendantLamp_2
   m_TagString: Untagged
@@ -42,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 155504874209078376}
-  m_Mesh: {fileID: 8088745209694530726, guid: 7585397145be1fd4db2da7389f3142ad, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 4ea62c351fd540e4493944123287ed9c, type: 2}
 --- !u!23 &1900435930122294446
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -116,6 +117,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8088745209694530726, guid: 7585397145be1fd4db2da7389f3142ad, type: 3}
+--- !u!114 &4199257331831822925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155504874209078376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.3
 --- !u!1 &1097277689229360507
 GameObject:
   m_ObjectHideFlags: 0

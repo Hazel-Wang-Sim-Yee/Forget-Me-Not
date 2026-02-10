@@ -101,6 +101,7 @@ GameObject:
   - component: {fileID: 333754167700154462}
   - component: {fileID: 5363298328535674666}
   - component: {fileID: 8765515633347660148}
+  - component: {fileID: 7190497010362536774}
   m_Layer: 0
   m_Name: BR_BackDoorFrame
   m_TagString: Untagged
@@ -132,7 +133,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3196090697506589055}
-  m_Mesh: {fileID: 9078629768254503487, guid: 31c91f05fd2e1964cbf8620bd6563f78, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 0a94ae7be7ef70e4dae8226765f079c2, type: 2}
 --- !u!23 &8765515633347660148
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -183,6 +184,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7190497010362536774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3196090697506589055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.6
 --- !u!1 &5737734338274672250
 GameObject:
   m_ObjectHideFlags: 0

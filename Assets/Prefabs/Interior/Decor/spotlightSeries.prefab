@@ -164,6 +164,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3160149507940434549, guid: 9ca566b76d8d1f44c9c3be983c28d4c5, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: f2f877c26e627964f89ca6a63f923824, type: 2}
     - target: {fileID: 3600360407843427971, guid: 9ca566b76d8d1f44c9c3be983c28d4c5, type: 3}
       propertyPath: m_Name
       value: spotlightYaw (1)

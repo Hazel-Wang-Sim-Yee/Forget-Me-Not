@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8759716586095125893}
   - component: {fileID: 3058048600342706355}
   - component: {fileID: 2284928294054107350}
+  - component: {fileID: 1296077397355224817}
   m_Layer: 0
   m_Name: flowerTulip
   m_TagString: Flower
@@ -45,7 +46,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3607361119933098660}
-  m_Mesh: {fileID: 4949895944030729570, guid: 225f18c1d19a0a947a6b0a33c4190ff4, type: 3}
+  m_Mesh: {fileID: 4300000, guid: dcef9143a3eef0f489424efc8f849ac2, type: 2}
 --- !u!23 &5161579583814622635
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -272,6 +273,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.027677594, y: 0.42377532, z: 0.02880329}
   m_Center: {x: -0.007302598, y: 0.019335687, z: 0.007922619}
+--- !u!114 &1296077397355224817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3607361119933098660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.1
 --- !u!1 &7764366785392215040
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,6 +297,7 @@ GameObject:
   - component: {fileID: 9125863159550103243}
   - component: {fileID: 4211610247110505342}
   - component: {fileID: 8483866622269300564}
+  - component: {fileID: 3815698568634452909}
   m_Layer: 0
   m_Name: tulipLeaves
   m_TagString: Untagged
@@ -312,7 +327,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7764366785392215040}
-  m_Mesh: {fileID: -2258419422713296198, guid: 225f18c1d19a0a947a6b0a33c4190ff4, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 8b636b6c0f410514dbbfc1f099744ac3, type: 2}
 --- !u!23 &8483866622269300564
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -362,6 +377,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3815698568634452909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7764366785392215040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.5
 --- !u!1 &8742555196343744182
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,6 +402,7 @@ GameObject:
   - component: {fileID: 1648118944293354201}
   - component: {fileID: 1074847603249184480}
   - component: {fileID: 6821899482586478449}
+  - component: {fileID: 8795663079642381331}
   m_Layer: 0
   m_Name: tulipPetals
   m_TagString: Untagged
@@ -403,7 +432,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8742555196343744182}
-  m_Mesh: {fileID: -5314138013030016664, guid: 225f18c1d19a0a947a6b0a33c4190ff4, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 80242535dfc8643479bcae5ca6e29356, type: 2}
 --- !u!23 &1074847603249184480
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -474,3 +503,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.097199515, y: 0.09724878, z: 0.098007336}
   m_Center: {x: 0.00047527254, y: 0.047448598, z: 0.0060307644}
+--- !u!114 &8795663079642381331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8742555196343744182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.2

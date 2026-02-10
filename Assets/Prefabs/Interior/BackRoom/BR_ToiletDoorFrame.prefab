@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 8455138860224643544}
   - component: {fileID: 8303089012387007342}
   - component: {fileID: 5886125539675977810}
+  - component: {fileID: 5012918886523400506}
   m_Layer: 0
   m_Name: BR_ToiletDoorHandle_Out
   m_TagString: Untagged
@@ -132,7 +133,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4087358719564510298}
-  m_Mesh: {fileID: -8216834393404477490, guid: e3862cb3db48d514e8a51309bc8f0c3e, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 6c4e224cdc3c1a44e861e7c84554035f, type: 2}
 --- !u!23 &5886125539675977810
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -182,6 +183,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5012918886523400506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4087358719564510298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.2
 --- !u!1 &5734619814568078810
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,6 +299,7 @@ GameObject:
   - component: {fileID: 6353405363052812056}
   - component: {fileID: 8193929291270564920}
   - component: {fileID: 8525535455023819606}
+  - component: {fileID: 1746493325256177317}
   m_Layer: 0
   m_Name: BR_ToiletDoorHandle_In
   m_TagString: Untagged
@@ -314,7 +329,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8710943234453650347}
-  m_Mesh: {fileID: -8077626284920727787, guid: e3862cb3db48d514e8a51309bc8f0c3e, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 51d206e2bfe3da04b84c6e19a860ad02, type: 2}
 --- !u!23 &8525535455023819606
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -364,3 +379,16 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1746493325256177317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8710943234453650347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.2

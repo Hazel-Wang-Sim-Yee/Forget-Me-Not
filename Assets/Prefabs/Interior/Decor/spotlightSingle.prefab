@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8240689876818958452}
   - component: {fileID: 4876326568552455987}
   - component: {fileID: 7237596491720636623}
+  - component: {fileID: 3565493825041657555}
   m_Layer: 0
   m_Name: spotlightSingle
   m_TagString: Untagged
@@ -42,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4928658325296148312}
-  m_Mesh: {fileID: 441988400978365671, guid: e47f2d8bc83ebf946a7dfc9c6f81c5a8, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 5801911971c40244fac16bc52e3a2ea2, type: 2}
 --- !u!23 &4876326568552455987
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -114,6 +115,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 441988400978365671, guid: e47f2d8bc83ebf946a7dfc9c6f81c5a8, type: 3}
+--- !u!114 &3565493825041657555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4928658325296148312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.5
 --- !u!1001 &4188326937091685933
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -162,6 +176,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3160149507940434549, guid: 9ca566b76d8d1f44c9c3be983c28d4c5, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: f2f877c26e627964f89ca6a63f923824, type: 2}
     - target: {fileID: 3600360407843427971, guid: 9ca566b76d8d1f44c9c3be983c28d4c5, type: 3}
       propertyPath: m_Name
       value: spotlightYaw
