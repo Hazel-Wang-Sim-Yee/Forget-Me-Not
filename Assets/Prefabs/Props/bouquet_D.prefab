@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8212543682881898439}
   - component: {fileID: 8010412354965330115}
   - component: {fileID: 4419119885904676237}
+  - component: {fileID: 1917012175072363000}
   m_Layer: 0
   m_Name: daisyPetals
   m_TagString: Untagged
@@ -40,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 48127126167409164}
-  m_Mesh: {fileID: 196795331162805775, guid: 72d5c8f61f7f03e49b69479cf2b2639b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 5eacebd5a3457824b9762c43c651dfec, type: 2}
 --- !u!23 &4419119885904676237
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -90,6 +91,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1917012175072363000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48127126167409164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.5
 --- !u!1 &120412610955028353
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,6 +115,7 @@ GameObject:
   - component: {fileID: 4426359807882281979}
   - component: {fileID: 4846713244861469762}
   - component: {fileID: 4155710039053757590}
+  - component: {fileID: 6824480738653671983}
   m_Layer: 0
   m_Name: daisyPetals
   m_TagString: Untagged
@@ -130,7 +145,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 120412610955028353}
-  m_Mesh: {fileID: -6738659838923968749, guid: 72d5c8f61f7f03e49b69479cf2b2639b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 2dba1845f8e5ba14fa84e7dedea5645f, type: 2}
 --- !u!23 &4155710039053757590
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -180,6 +195,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6824480738653671983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120412610955028353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.5
 --- !u!1 &286704365067624649
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,6 +219,7 @@ GameObject:
   - component: {fileID: 2411668658066226097}
   - component: {fileID: 4104995923825078644}
   - component: {fileID: 4202671225543958718}
+  - component: {fileID: 8787346247448668359}
   m_Layer: 0
   m_Name: daisyPetals
   m_TagString: Untagged
@@ -220,7 +249,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 286704365067624649}
-  m_Mesh: {fileID: 1520556731842581213, guid: 72d5c8f61f7f03e49b69479cf2b2639b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: b43682b461863694d8e128f7b4437100, type: 2}
 --- !u!23 &4202671225543958718
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -270,6 +299,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8787346247448668359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286704365067624649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.5
 --- !u!1 &379348181319377656
 GameObject:
   m_ObjectHideFlags: 0
@@ -652,6 +694,7 @@ GameObject:
   - component: {fileID: 9015812486492127976}
   - component: {fileID: 7161296061919599442}
   - component: {fileID: 8630548593382875242}
+  - component: {fileID: 7350194650630607915}
   m_Layer: 0
   m_Name: flowerDaisy4
   m_TagString: Untagged
@@ -682,7 +725,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 775882794107207426}
-  m_Mesh: {fileID: -2567426611739220097, guid: 72d5c8f61f7f03e49b69479cf2b2639b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: b2e9afe65129e05419947e275e3f6877, type: 2}
 --- !u!23 &8630548593382875242
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -732,6 +775,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7350194650630607915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775882794107207426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.1
 --- !u!1 &1111839663340357932
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,6 +799,7 @@ GameObject:
   - component: {fileID: 7524961418132757250}
   - component: {fileID: 802157009196016429}
   - component: {fileID: 6594828522729997152}
+  - component: {fileID: 6683454936774593902}
   m_Layer: 0
   m_Name: daisyPetals
   m_TagString: Untagged
@@ -772,7 +829,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1111839663340357932}
-  m_Mesh: {fileID: 3215609127000004095, guid: 72d5c8f61f7f03e49b69479cf2b2639b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 44b50771964d73645aec855fa6e7fc35, type: 2}
 --- !u!23 &6594828522729997152
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -822,6 +879,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6683454936774593902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111839663340357932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.5
 --- !u!1 &1195818730352401879
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,6 +903,7 @@ GameObject:
   - component: {fileID: 8291083598594423751}
   - component: {fileID: 735221593811446736}
   - component: {fileID: 7427901472971828654}
+  - component: {fileID: 1734326498036576113}
   m_Layer: 0
   m_Name: daisyEye
   m_TagString: Untagged
@@ -863,7 +934,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1195818730352401879}
-  m_Mesh: {fileID: 7476992908392840269, guid: 72d5c8f61f7f03e49b69479cf2b2639b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 52fcfefd700db4c439427e529725fe4d, type: 2}
 --- !u!23 &7427901472971828654
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -913,6 +984,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1734326498036576113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195818730352401879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.3
 --- !u!1 &2009003202543504910
 GameObject:
   m_ObjectHideFlags: 0
@@ -1014,6 +1098,7 @@ GameObject:
   - component: {fileID: 2748121146742866309}
   - component: {fileID: 7980221835905771009}
   - component: {fileID: 3578507446493840137}
+  - component: {fileID: 1389539324230420811}
   m_Layer: 0
   m_Name: daisyEye
   m_TagString: Untagged
@@ -1044,7 +1129,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2212369741404765392}
-  m_Mesh: {fileID: -786467944414657372, guid: 72d5c8f61f7f03e49b69479cf2b2639b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: a3f7e9470b13e5f408c8f76040d908c0, type: 2}
 --- !u!23 &3578507446493840137
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1094,6 +1179,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1389539324230420811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2212369741404765392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.3
 --- !u!1 &2226588373988411135
 GameObject:
   m_ObjectHideFlags: 0
@@ -1105,6 +1203,7 @@ GameObject:
   - component: {fileID: 8347345957649363512}
   - component: {fileID: 3729802364457692164}
   - component: {fileID: 8730070438023952289}
+  - component: {fileID: 5070453607120952575}
   m_Layer: 0
   m_Name: flowerDaisy8
   m_TagString: Untagged
@@ -1135,7 +1234,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2226588373988411135}
-  m_Mesh: {fileID: 8974604471930114822, guid: 72d5c8f61f7f03e49b69479cf2b2639b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 0e8b02a563d2f864ea80e77c0417b2c5, type: 2}
 --- !u!23 &8730070438023952289
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1185,6 +1284,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5070453607120952575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2226588373988411135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.1
 --- !u!1 &3878756057356685141
 GameObject:
   m_ObjectHideFlags: 0
@@ -1196,6 +1308,7 @@ GameObject:
   - component: {fileID: 6317135758754256966}
   - component: {fileID: 6329387790206809185}
   - component: {fileID: 2314338969297462890}
+  - component: {fileID: 5318020630823714051}
   m_Layer: 0
   m_Name: flowerDaisy2
   m_TagString: Untagged
@@ -1226,7 +1339,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3878756057356685141}
-  m_Mesh: {fileID: 5251268713206272205, guid: 72d5c8f61f7f03e49b69479cf2b2639b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: c7010158dd0260b428e0427cd71d68d6, type: 2}
 --- !u!23 &2314338969297462890
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1276,6 +1389,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5318020630823714051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3878756057356685141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.1
 --- !u!1 &4170797600441583280
 GameObject:
   m_ObjectHideFlags: 0
@@ -1287,6 +1413,7 @@ GameObject:
   - component: {fileID: 966070686938114330}
   - component: {fileID: 7942888761379421839}
   - component: {fileID: 338643938692134571}
+  - component: {fileID: 967059714078633499}
   m_Layer: 0
   m_Name: daisyEye
   m_TagString: Untagged
@@ -1317,7 +1444,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4170797600441583280}
-  m_Mesh: {fileID: 5048391197045857293, guid: 72d5c8f61f7f03e49b69479cf2b2639b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 86b2665f879e55546b20ae60c7a8b35a, type: 2}
 --- !u!23 &338643938692134571
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1367,6 +1494,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &967059714078633499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4170797600441583280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.3
 --- !u!1 &4496752026829790798
 GameObject:
   m_ObjectHideFlags: 0
@@ -1378,6 +1518,7 @@ GameObject:
   - component: {fileID: 3858334531702026114}
   - component: {fileID: 8159796287090252922}
   - component: {fileID: 8251787310424984059}
+  - component: {fileID: 3669190796329514165}
   m_Layer: 0
   m_Name: flowerDaisy3
   m_TagString: Untagged
@@ -1408,7 +1549,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4496752026829790798}
-  m_Mesh: {fileID: 3414235157927443887, guid: 72d5c8f61f7f03e49b69479cf2b2639b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 1b93eaa30e54f9141a4f7fa125fafa2b, type: 2}
 --- !u!23 &8251787310424984059
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1458,6 +1599,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3669190796329514165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4496752026829790798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.1
 --- !u!1 &4667056459691093192
 GameObject:
   m_ObjectHideFlags: 0
@@ -1469,6 +1623,7 @@ GameObject:
   - component: {fileID: 5334347579549423240}
   - component: {fileID: 1016450844384618383}
   - component: {fileID: 2774257218593050675}
+  - component: {fileID: 8262542019209080320}
   m_Layer: 0
   m_Name: daisyPetals
   m_TagString: Untagged
@@ -1498,7 +1653,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4667056459691093192}
-  m_Mesh: {fileID: 595856618258664915, guid: 72d5c8f61f7f03e49b69479cf2b2639b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 3a996778d6a953e46b09e6174332152f, type: 2}
 --- !u!23 &2774257218593050675
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1548,6 +1703,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8262542019209080320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4667056459691093192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.5
 --- !u!1 &4710417386359012045
 GameObject:
   m_ObjectHideFlags: 0
@@ -1559,6 +1727,7 @@ GameObject:
   - component: {fileID: 25753705298017420}
   - component: {fileID: 8107776950629975585}
   - component: {fileID: 6886089386430172914}
+  - component: {fileID: 6813066487097023416}
   m_Layer: 0
   m_Name: flowerDaisy1
   m_TagString: Untagged
@@ -1589,7 +1758,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4710417386359012045}
-  m_Mesh: {fileID: 2727159450064738213, guid: 72d5c8f61f7f03e49b69479cf2b2639b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: e537d594f2cff3c498ebdeaad8dead31, type: 2}
 --- !u!23 &6886089386430172914
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1639,6 +1808,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6813066487097023416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4710417386359012045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.1
 --- !u!1 &5274575353237795109
 GameObject:
   m_ObjectHideFlags: 0
@@ -1650,6 +1832,7 @@ GameObject:
   - component: {fileID: 8372409291469619820}
   - component: {fileID: 1525300818331198298}
   - component: {fileID: 4491092530853501976}
+  - component: {fileID: 2652701309903583008}
   m_Layer: 0
   m_Name: flowerDaisy6
   m_TagString: Untagged
@@ -1680,7 +1863,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5274575353237795109}
-  m_Mesh: {fileID: -1012913871470777959, guid: 72d5c8f61f7f03e49b69479cf2b2639b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: beb32d011c50b2d44b5eb78743c0635f, type: 2}
 --- !u!23 &4491092530853501976
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1730,6 +1913,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2652701309903583008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5274575353237795109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.1
 --- !u!1 &5580949537349076169
 GameObject:
   m_ObjectHideFlags: 0
@@ -1741,6 +1937,7 @@ GameObject:
   - component: {fileID: 2752166347735402268}
   - component: {fileID: 9119531002225812213}
   - component: {fileID: 4182591031377480027}
+  - component: {fileID: 3355601735535633838}
   m_Layer: 0
   m_Name: daisyEye
   m_TagString: Untagged
@@ -1771,7 +1968,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5580949537349076169}
-  m_Mesh: {fileID: 4817453390086258184, guid: 72d5c8f61f7f03e49b69479cf2b2639b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 674daab60ee2f1641a5a1a2a1ce2667e, type: 2}
 --- !u!23 &4182591031377480027
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1821,6 +2018,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3355601735535633838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5580949537349076169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.3
 --- !u!1 &5889104125222935092
 GameObject:
   m_ObjectHideFlags: 0
@@ -1832,6 +2042,7 @@ GameObject:
   - component: {fileID: 2788818523990141981}
   - component: {fileID: 8802193657732709364}
   - component: {fileID: 6749891382090053407}
+  - component: {fileID: 4077206844184166707}
   m_Layer: 0
   m_Name: flowerDaisy5
   m_TagString: Untagged
@@ -1862,7 +2073,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5889104125222935092}
-  m_Mesh: {fileID: 2557752844204924060, guid: 72d5c8f61f7f03e49b69479cf2b2639b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: ec18eb3dfa18f734ca596be567c78688, type: 2}
 --- !u!23 &6749891382090053407
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1912,6 +2123,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4077206844184166707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5889104125222935092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.1
 --- !u!1 &5976748960298318130
 GameObject:
   m_ObjectHideFlags: 0
@@ -1923,6 +2147,7 @@ GameObject:
   - component: {fileID: 6675773907887133243}
   - component: {fileID: 228875990793913726}
   - component: {fileID: 3807137598616344850}
+  - component: {fileID: 7902760482769350661}
   m_Layer: 0
   m_Name: daisyEye
   m_TagString: Untagged
@@ -1953,7 +2178,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5976748960298318130}
-  m_Mesh: {fileID: -4305522790942946802, guid: 72d5c8f61f7f03e49b69479cf2b2639b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: d9641be1f4a353a4980d7b73638c8d71, type: 2}
 --- !u!23 &3807137598616344850
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2003,6 +2228,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7902760482769350661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5976748960298318130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.3
 --- !u!1 &6469824111357002562
 GameObject:
   m_ObjectHideFlags: 0
@@ -2014,6 +2252,7 @@ GameObject:
   - component: {fileID: 7116477589144466434}
   - component: {fileID: 3627141195137392552}
   - component: {fileID: 7069152010166996969}
+  - component: {fileID: 7037651268260903811}
   m_Layer: 0
   m_Name: daisyPetals
   m_TagString: Untagged
@@ -2043,7 +2282,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6469824111357002562}
-  m_Mesh: {fileID: 3363289459339056753, guid: 72d5c8f61f7f03e49b69479cf2b2639b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 35ed261921966eb409d5ebf0b52ea954, type: 2}
 --- !u!23 &7069152010166996969
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2093,6 +2332,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7037651268260903811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6469824111357002562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.5
 --- !u!1 &6740187679447027772
 GameObject:
   m_ObjectHideFlags: 0
@@ -2104,6 +2356,7 @@ GameObject:
   - component: {fileID: 1429442610136817450}
   - component: {fileID: 7980099803069880806}
   - component: {fileID: 3666027327608781655}
+  - component: {fileID: 9163354063959403959}
   m_Layer: 0
   m_Name: daisyEye
   m_TagString: Untagged
@@ -2134,7 +2387,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6740187679447027772}
-  m_Mesh: {fileID: -4939135365683167772, guid: 72d5c8f61f7f03e49b69479cf2b2639b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 1c574793787fa0042b5efa2662fe7ba1, type: 2}
 --- !u!23 &3666027327608781655
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2184,6 +2437,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &9163354063959403959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6740187679447027772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.3
 --- !u!1 &7386702198593389706
 GameObject:
   m_ObjectHideFlags: 0
@@ -2195,6 +2461,7 @@ GameObject:
   - component: {fileID: 4155875452403368923}
   - component: {fileID: 8611493258105394384}
   - component: {fileID: 5183269371074962746}
+  - component: {fileID: 1647866042607401410}
   m_Layer: 0
   m_Name: daisyEye
   m_TagString: Untagged
@@ -2225,7 +2492,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7386702198593389706}
-  m_Mesh: {fileID: 4553471472779036023, guid: 72d5c8f61f7f03e49b69479cf2b2639b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 25265abce7efbad4f97f594a7d2ca296, type: 2}
 --- !u!23 &5183269371074962746
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2275,6 +2542,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1647866042607401410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7386702198593389706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.3
 --- !u!1 &7507120883714305095
 GameObject:
   m_ObjectHideFlags: 0
@@ -2286,6 +2566,7 @@ GameObject:
   - component: {fileID: 8485488809185677217}
   - component: {fileID: 3789339102646614551}
   - component: {fileID: 3135633671613381984}
+  - component: {fileID: 627977342874037938}
   m_Layer: 0
   m_Name: daisyEye
   m_TagString: Untagged
@@ -2316,7 +2597,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7507120883714305095}
-  m_Mesh: {fileID: -5475912795718372768, guid: 72d5c8f61f7f03e49b69479cf2b2639b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 5457e25b42ddb66488136b08f0d25e69, type: 2}
 --- !u!23 &3135633671613381984
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2366,6 +2647,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &627977342874037938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7507120883714305095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.3
 --- !u!1 &8044718817172527254
 GameObject:
   m_ObjectHideFlags: 0
@@ -2377,6 +2671,7 @@ GameObject:
   - component: {fileID: 7993823568715948857}
   - component: {fileID: 662877858652751614}
   - component: {fileID: 7973187368610265389}
+  - component: {fileID: 4025017382559088890}
   m_Layer: 0
   m_Name: flowerDaisy7
   m_TagString: Untagged
@@ -2407,7 +2702,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8044718817172527254}
-  m_Mesh: {fileID: -4780405741511587425, guid: 72d5c8f61f7f03e49b69479cf2b2639b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: e4f74915ba78448428b29d8cdcf1e19a, type: 2}
 --- !u!23 &7973187368610265389
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2457,6 +2752,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4025017382559088890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8044718817172527254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.1
 --- !u!1 &8846349098686916977
 GameObject:
   m_ObjectHideFlags: 0
@@ -2468,6 +2776,7 @@ GameObject:
   - component: {fileID: 4270344977963817298}
   - component: {fileID: 697778211269328627}
   - component: {fileID: 3410532635483638637}
+  - component: {fileID: 5599418082586177276}
   m_Layer: 0
   m_Name: daisyPetals
   m_TagString: Untagged
@@ -2497,7 +2806,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8846349098686916977}
-  m_Mesh: {fileID: 5780753736790392906, guid: 72d5c8f61f7f03e49b69479cf2b2639b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: d26cf68a1cb7a4d418ac0cdfea855f67, type: 2}
 --- !u!23 &3410532635483638637
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2547,6 +2856,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5599418082586177276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8846349098686916977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.5
 --- !u!1 &9026252101149870809
 GameObject:
   m_ObjectHideFlags: 0
@@ -2648,6 +2970,7 @@ GameObject:
   - component: {fileID: 3397436833582427618}
   - component: {fileID: 2891628202732510852}
   - component: {fileID: 4112038237555405568}
+  - component: {fileID: 3352347713545859538}
   m_Layer: 0
   m_Name: daisyPetals
   m_TagString: Untagged
@@ -2677,7 +3000,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9213640638630263580}
-  m_Mesh: {fileID: 4880494451446043938, guid: 72d5c8f61f7f03e49b69479cf2b2639b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 29e8a35f5f07a29488321ad8e756f24c, type: 2}
 --- !u!23 &4112038237555405568
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2727,3 +3050,16 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3352347713545859538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9213640638630263580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.5

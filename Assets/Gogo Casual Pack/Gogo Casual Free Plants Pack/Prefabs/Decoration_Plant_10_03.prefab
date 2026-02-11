@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8414392458300024404}
   - component: {fileID: 5990097660896481950}
   - component: {fileID: 1965733314509683111}
+  - component: {fileID: 8836533020375772664}
   m_Layer: 0
   m_Name: Decoration_Plant_10_03
   m_TagString: Untagged
@@ -41,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5197688770069902155}
-  m_Mesh: {fileID: 5859143322810313564, guid: c44ff891baa3604469826eabdd8b60e4, type: 3}
+  m_Mesh: {fileID: 4300000, guid: c2ed1d8585e0b3d4ab2cf8a32bef0cf1, type: 2}
 --- !u!23 &5990097660896481950
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -112,3 +113,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.12350753, y: 0.23313065, z: 0.10944362}
   m_Center: {x: 0.0000016931444, y: 0.11656531, z: -0.0000002104789}
+--- !u!114 &8836533020375772664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197688770069902155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptimizeMesh
+  _quality: 0.2
