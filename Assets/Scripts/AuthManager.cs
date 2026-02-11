@@ -2,13 +2,16 @@ using UnityEngine;
 using TMPro;
 using Firebase;
 using Firebase.Auth;
+using Firebase.Database;
 using Firebase.Extensions;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class AuthManager : MonoBehaviour
 {
     [Header("Firebase Setup")]
     public FirebaseAuth auth;
+    private DatabaseReference dbRef;
 
     [Header("Screen Containers")]
     public GameObject loginContainer;
@@ -32,12 +35,13 @@ public class AuthManager : MonoBehaviour
     void Start()
     {
         auth = FirebaseAuth.DefaultInstance;
+        dbRef = FirebaseDatabase.DefaultInstance.RootReference;
+
         loginContainer.SetActive(false);
         signUpContainer.SetActive(false);
 
         if (errorUI != null) errorUI.SetActive(false);
     }
-
     public void ShowLoginScreen()
     {
         if (errorUI != null) errorUI.SetActive(false);
@@ -71,9 +75,7 @@ public class AuthManager : MonoBehaviour
                 return;
             }
 
-            // SUCCESS
             Debug.Log("Login Successful! User: " + task.Result.User.Email);
-
             SceneManager.LoadScene(nextSceneName);
         });
     }
@@ -97,9 +99,47 @@ public class AuthManager : MonoBehaviour
                 return;
             }
 
-            // SUCCESS
-            Debug.Log("Sign Up Success! Account Created.");
-            ShowLoginScreen();
+            string userId = task.Result.User.UserId;
+            Debug.Log("Sign Up Success! User ID: " + userId);
+
+            InitializeUserData(userId);
+        });
+    }
+
+    private void InitializeUserData(string userId)
+    {
+        Dictionary<string, object> userData = new Dictionary<string, object>();
+
+        userData["current_day"] = 1;
+        userData["twist_unlocked"] = false;
+
+        Dictionary<string, object> npcs = new Dictionary<string, object>();
+        npcs["ah_boon"] = false;
+        npcs["mdm_wei_ting"] = false;
+        npcs["mrs_raj"] = false;
+        npcs["siti"] = false;
+        npcs["uncle_tan"] = false;
+        userData["npcs"] = npcs;
+
+        Dictionary<string, object> recalledNpcs = new Dictionary<string, object>();
+        recalledNpcs["ah_boon"] = false;
+        recalledNpcs["siti"] = false;
+        recalledNpcs["uncle_tan"] = false;
+        recalledNpcs["mrs_raj"] = false;
+        recalledNpcs["mdm_wei_ting"] = false;
+        userData["recalled_npcs"] = recalledNpcs;
+
+        dbRef.Child("users").Child(userId).UpdateChildrenAsync(userData).ContinueWithOnMainThread(task =>
+        {
+            if (task.IsCompleted)
+            {
+                Debug.Log("Database Initialized for user: " + userId);
+                ShowLoginScreen();
+            }
+            else
+            {
+                Debug.LogError("Failed to initialize database: " + task.Exception);
+            }
         });
     }
 

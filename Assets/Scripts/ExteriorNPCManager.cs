@@ -36,7 +36,7 @@ public class ExteriorNPCManager : MonoBehaviour
             GameObject spawnedNPC = Instantiate(selectedPrefab, selectedSpawn.position, selectedSpawn.rotation);
             availableNPCs.RemoveAt(npcIndex);
 
-            RemoveShopSpecifics(spawnedNPC);
+            CleanNPCForExterior(spawnedNPC);
 
             NPCBehaviour behavior = spawnedNPC.GetComponent<NPCBehaviour>();
             if (behavior != null)
@@ -46,18 +46,12 @@ public class ExteriorNPCManager : MonoBehaviour
         }
     }
 
-    private void RemoveShopSpecifics(GameObject npc)
+    private void CleanNPCForExterior(GameObject npc)
     {
         Transform canvasTrans = npc.transform.Find("DialogueCanvas");
         if (canvasTrans != null) 
         {
-            Destroy(canvasTrans.gameObject);
-        }
-
-        var firebaseScript = npc.GetComponentInChildren<NPCDialogueFirebase>();
-        if (firebaseScript != null) 
-        {
-            Destroy(firebaseScript);
+            canvasTrans.gameObject.SetActive(false);
         }
 
         XRSocketInteractor[] sockets = npc.GetComponentsInChildren<XRSocketInteractor>();
@@ -65,5 +59,6 @@ public class ExteriorNPCManager : MonoBehaviour
         {
             Destroy(socket.gameObject);
         }
+        
     }
 }

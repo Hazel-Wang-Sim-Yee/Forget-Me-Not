@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class StartNextDayScript : MonoBehaviour
 {
@@ -21,15 +22,24 @@ public class StartNextDayScript : MonoBehaviour
 
     public void isDayActiveBecomeTrue()
     {
-        Debug.Log("Starting next day...");
         GameManager.Instance.isDayActive = true;
         StartNextDayCanvas.SetActive(false);
-        Debug.Log("isDayActive set to true");
     }   
 
     public void goToExteriorScene()
     {
-        Debug.Log("Loading Exterior Scene...");
-        UnityEngine.SceneManagement.SceneManager.LoadScene("ExteriorScene");
+        if (GameManager.Instance.currentDay >= 6 && GameManager.Instance.allRecalled)
+        {
+            Debug.Log("Twist Conditions Met: Cancelling Town trip, spawning Nurse.");
+            
+            StartNextDayCanvas.SetActive(false);
+            
+            GameManager.Instance.TriggerNurseTwist();
+        }
+        else
+        {
+            Debug.Log("Loading Exterior Scene...");
+            SceneManager.LoadScene("ExteriorScene");
+        }
     }
 }

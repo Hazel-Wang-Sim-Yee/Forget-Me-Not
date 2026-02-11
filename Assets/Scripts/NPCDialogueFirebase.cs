@@ -15,9 +15,9 @@ public class NPCDialogueFirebase : MonoBehaviour
 
     [Header("XR Settings")]
     [SerializeField]
-    private XRSocketInteractor rightHandSocket; // For Flower
+    private XRSocketInteractor rightHandSocket;
     [SerializeField]
-    private XRSocketInteractor leftHandSocket;  // For Money
+    private XRSocketInteractor leftHandSocket;
 
     [Header("UI Settings")]
     [SerializeField]
@@ -29,18 +29,16 @@ public class NPCDialogueFirebase : MonoBehaviour
     private GameObject MoneyPrefab;
     private NPCBehaviour npcMovement; 
 
-    // Internal State
     private string wantedFlowerType;
     private string successResponse;
     private string failResponse;
-    private bool transactionComplete = false; // Flag to ensure he doesn't leave twice
+    private bool transactionComplete = false;
 
     void Start()
     {
         NPC = this.gameObject;
         dbRef = FirebaseDatabase.DefaultInstance.RootReference;
         
-        // ROBUST SCRIPT FINDING (Parent/Self/Children)
         npcMovement = GetComponent<NPCBehaviour>();
         if (npcMovement == null) npcMovement = GetComponentInParent<NPCBehaviour>();
         if (npcMovement == null) npcMovement = GetComponentInChildren<NPCBehaviour>();
@@ -50,10 +48,8 @@ public class NPCDialogueFirebase : MonoBehaviour
 
     void OnEnable()
     {
-        // Listen for Flower Input
         if (rightHandSocket != null) rightHandSocket.selectEntered.AddListener(CheckFlower);
         
-        // NEW: Listen for Money Removal
         if (leftHandSocket != null) leftHandSocket.selectExited.AddListener(OnMoneyTaken);
     }
 
@@ -87,10 +83,8 @@ public class NPCDialogueFirebase : MonoBehaviour
 
         if (heldFlowerName.Contains(wantedFlowerType))
         {
-            // --- SUCCESS ---
             DialogueBox.text = successResponse;
 
-            // Spawn Money
             if (leftHandSocket != null && MoneyPrefab != null)
                 Instantiate(MoneyPrefab, leftHandSocket.transform.position, Quaternion.identity);
 
@@ -98,19 +92,15 @@ public class NPCDialogueFirebase : MonoBehaviour
 
             Destroy(selectedObject);
             
-            // SET FLAG: Transaction is done, waiting for player to take money
             transactionComplete = true; 
 
-            // IMPORTANT: We do NOT call TriggerExit here anymore. We wait.
             Debug.Log("Flower accepted. Waiting for player to take money...");
         }
         else
         {
-            // --- FAILURE ---
             DialogueBox.text = failResponse;
             Destroy(selectedObject);
             
-            // If failed, just leave after 2 seconds (no money to take)
             if (npcMovement != null && gm != null && gm.spawnLocation != null)
             {
                 npcMovement.TriggerExit(gm.spawnLocation, 2.0f);
@@ -118,10 +108,8 @@ public class NPCDialogueFirebase : MonoBehaviour
         }
     }
 
-    // --- NEW FUNCTION: Called when player grabs the money ---
     private void OnMoneyTaken(SelectExitEventArgs args)
     {
-        // Only exit if the transaction was actually successful
         if (transactionComplete)
         {
             Debug.Log("Money taken! NPC leaving now.");
@@ -129,11 +117,9 @@ public class NPCDialogueFirebase : MonoBehaviour
             GameManager gm = GameManager.Instance;
             if (npcMovement != null && gm != null && gm.spawnLocation != null)
             {
-                // Leave after a short delay (1 second) so it doesn't look instant
                 npcMovement.TriggerExit(gm.spawnLocation, 1.0f);
             }
             
-            // Reset flag so it doesn't trigger again
             transactionComplete = false;
         }
     }
