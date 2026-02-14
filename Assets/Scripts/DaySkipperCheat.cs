@@ -1,3 +1,8 @@
+/*
+* Author: Jeffrey
+* Date: 2026-02-12
+* Description: Automatically skips the current day when the 'F' key is pressed. This cheat allows the player to skip to the next day without completing the current day's tasks.
+*/
 using UnityEngine;
 using UnityEngine.InputSystem; // <-- We need this to use the new system!
 

@@ -2012,6 +2012,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3697687675811905419, guid: 7f6d856492f7ac44db998b77b048615e, type: 3}
   m_PrefabInstance: {fileID: 153548744}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &155676813 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4820700320486887379, guid: 53b0d5dafb0b02848a55eda4601ec750, type: 3}
+  m_PrefabInstance: {fileID: 3596856253528955020}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &161211850
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22091,8 +22102,6 @@ MonoBehaviour:
   StartNextDayCanvas: {fileID: 1877676563}
   StartNextDayCanvasText: {fileID: 1598400325}
   xrOrigin: {fileID: 441087507}
-  fadeCanvasGroup: {fileID: 0}
-  fadeDuration: 1
 --- !u!4 &2017197196
 Transform:
   m_ObjectHideFlags: 0
@@ -28792,7 +28801,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5652083829069603198, guid: 53b0d5dafb0b02848a55eda4601ec750, type: 3}
+      propertyPath: drawerJoint
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6270941707941090017, guid: 53b0d5dafb0b02848a55eda4601ec750, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3596856253528955024}
+    - target: {fileID: 6270941707941090017, guid: 53b0d5dafb0b02848a55eda4601ec750, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenRegister
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 830204325634084336, guid: 53b0d5dafb0b02848a55eda4601ec750, type: 3}
+    - {fileID: 7612867680687374363, guid: 53b0d5dafb0b02848a55eda4601ec750, type: 3}
+    - {fileID: 825574369343234670, guid: 53b0d5dafb0b02848a55eda4601ec750, type: 3}
+    - {fileID: 3869564178531044372, guid: 53b0d5dafb0b02848a55eda4601ec750, type: 3}
+    - {fileID: 5652083829069603198, guid: 53b0d5dafb0b02848a55eda4601ec750, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 21389344670957641, guid: 53b0d5dafb0b02848a55eda4601ec750, type: 3}
@@ -28876,7 +28902,7 @@ MonoBehaviour:
   cashDrawer: {fileID: 3596856253528955022}
   drawerJoint: {fileID: 3596856253528955026}
   cashRegisterCollider: {fileID: 3596856253528955025}
-  amountInRegisterText: {fileID: 0}
+  amountInRegisterText: {fileID: 155676813}
 --- !u!65 &3596856253528955025
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28915,7 +28941,7 @@ ConfigurableJoint:
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
   m_YMotion: 0
-  m_ZMotion: 1
+  m_ZMotion: 0
   m_AngularXMotion: 0
   m_AngularYMotion: 0
   m_AngularZMotion: 0
@@ -29173,7 +29199,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
