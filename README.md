@@ -16,6 +16,17 @@ https://www.figma.com/design/gtqqaiQUhULMp9SgAE6OKF/Forget_Me_Not?node-id=0-1&t=
 Design Rationale Doc: 
 https://www.canva.com/design/DAG_kwMQtb8/eRSbYefKXcEqDWcQstWb6g/edit?utm_content=DAG_kwMQtb8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
+Controls:
+Right Joystick: teleport
+Left Joystick: moving in environment
+Right/Left Trigger: Grab and Interacting with buttons and UI
+
+Bouquet Instructions:
+1. Stock the wanted flower
+2. Take out one wrapping paper from the drawer
+3. Fill up all sockets in the wrapping paper with the desired flower (all sockets must be filled with the same flower or the Diasy Bouquet will be spawned on default)
+4. Take the ribbon gameobject and bring it in vicinity to the wrapping paper
+
 Features
 1. Integration with Firebase: The game is fully integrated with firebase. Dialogue and the type of flowers the NPC wants is all controlled through Firebase and can be changed without needing to completely create a new game build. Players are also able to save their player data through the firebase and can continue their games from wher ethey left off.
 
